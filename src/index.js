@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
-import AppRouter from "./routers/AppRouter";
+import App from "./routers/AppRouter";
 
-const jsx = <AppRouter />;
+const jsx = <App />;
 
 ReactDOM.render(jsx, document.getElementById("root"));
 
