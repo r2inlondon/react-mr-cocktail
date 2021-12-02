@@ -5,7 +5,7 @@ export const initialState = {
 };
 
 const cocktailSlice = createSlice({
-  name: "cocktail",
+  name: "cocktails",
   initialState,
   reducers: {
     getCocktails: (state, action) => {
