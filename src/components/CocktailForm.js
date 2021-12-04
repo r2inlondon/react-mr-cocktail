@@ -1,27 +1,38 @@
-import React, { useState } from "react";
+import React from "react";
 
-const CocktailForm = (props) => {
-  const [name, setCocktail] = useState("");
-
-  const onSubmit = (e) => {
-    e.preventDefault();
+export default class CocktailForm extends React.Component {
+  state = {
+    cocktailName: "",
   };
 
-  return (
-    <div>
-      <form onSubmit={onSubmit}>
-        <input
-          type="text"
-          placeholder="name"
-          value={name}
-          onChange={(e) => {
-            setCocktail(e.target.value);
-          }}
-        ></input>
-        <button>Add</button>
-      </form>
-    </div>
-  );
-};
+  onNameChange = (e) => {
+    const cocktailName = e.target.value;
 
-export default CocktailForm;
+    this.setState(() => ({
+      cocktailName,
+    }));
+  };
+
+  onSubmit = (e) => {
+    e.preventDefault();
+
+    this.props.onSubmit({ cocktailName: this.state.cocktailName });
+  };
+
+  render() {
+    return (
+      <div>
+        <form onSubmit={this.onSubmit}>
+          <input
+            type="text"
+            placeholder="Cocktail name"
+            autoFocus
+            value={this.state.cocktailName}
+            onChange={this.onNameChange}
+          ></input>
+          <button>Add</button>
+        </form>
+      </div>
+    );
+  }
+}
