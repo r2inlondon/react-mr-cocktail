@@ -1,8 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const ListCocktialItem = ({ cocktailName }) => (
+const ListCocktialItem = ({ id, cocktailName }) => (
   <div>
-    <h1>{cocktailName}</h1>
+    <h3>
+      <Link to={`/edit/{id}`}>{cocktailName}</Link>
+    </h3>
   </div>
 );
 
