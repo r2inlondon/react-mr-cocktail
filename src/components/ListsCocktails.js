@@ -8,7 +8,7 @@ const ListsCocktails = (props) => {
     <div>
       {props.cocktails.map((cocktail) => {
         console.log(cocktail);
-        return <ListCocktialItem {...cocktail} />;
+        return <ListCocktialItem key={cocktail.id} {...cocktail} />;
       })}
     </div>
   );

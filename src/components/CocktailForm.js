@@ -1,7 +1,9 @@
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
 
 export default class CocktailForm extends React.Component {
   state = {
+    id: uuidv4(),
     cocktailName: "",
   };
 
@@ -16,7 +18,10 @@ export default class CocktailForm extends React.Component {
   onSubmit = (e) => {
     e.preventDefault();
 
-    this.props.onSubmit({ cocktailName: this.state.cocktailName });
+    this.props.onSubmit({
+      id: this.state.id,
+      cocktailName: this.state.cocktailName,
+    });
   };
 
   render() {
