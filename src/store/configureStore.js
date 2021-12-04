@@ -3,6 +3,6 @@ import cocktailSlice from "../Reducers/cocktailsReducer";
 
 export default configureStore({
   reducer: {
-    cocktail: cocktailSlice,
+    cocktails: cocktailSlice,
   },
 });

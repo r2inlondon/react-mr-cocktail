@@ -1,6 +1,25 @@
 import React from "react";
+import { connect } from "react-redux";
 import ListCocktialItem from "./ListCocktailItem";
 
-const ListsCocktails = () => <ListCocktialItem />;
+const ListsCocktails = (props) => {
+  //   console.log(props);
+  return (
+    <div>
+      {props.cocktails.map((cocktail) => {
+        console.log(cocktail);
+        return <ListCocktialItem {...cocktail} />;
+      })}
+    </div>
+  );
+};
 
-export default ListsCocktails;
+const mapStateToProps = (state) => {
+  //   console.log("mapToProps", state);
+
+  return {
+    cocktails: state.cocktails.cocktails,
+  };
+};
+
+export default connect(mapStateToProps)(ListsCocktails);
