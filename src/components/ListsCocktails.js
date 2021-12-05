@@ -17,7 +17,7 @@ const mapStateToProps = (state) => {
   //   console.log("mapToProps", state);
 
   return {
-    cocktails: state.cocktails.cocktails,
+    cocktails: state.cocktails,
   };
 };
 

@@ -7,19 +7,18 @@ import CocktailForm from "./CocktailForm";
 const EditCocktailPage = (props) => {
   let { id } = useParams();
   let navigate = useNavigate();
-  const cocktail = props.cocktails.find((cocktail) => {
+  const updatedCocktail = props.cocktails.find((cocktail) => {
     return cocktail.id === id;
   });
-
-  console.log(cocktail);
 
   return (
     <div>
       <h1>Edit Cocktail</h1>
       <CocktailForm
-        cocktail={cocktail}
-        onSubmit={() => {
-          props.dispatch(editCocktail(cocktail.id));
+        //sending props to form
+        cocktail={updatedCocktail}
+        onSubmit={(cocktail) => {
+          props.dispatch(editCocktail(cocktail));
           navigate("/");
         }}
       />
@@ -31,7 +30,7 @@ const mapStateToProps = (state) => {
   //   console.log("mapToProps", state);
 
   return {
-    cocktails: state.cocktails.cocktails,
+    cocktails: state.cocktails,
   };
 };
 
