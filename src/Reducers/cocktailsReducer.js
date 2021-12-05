@@ -14,9 +14,15 @@ const cocktailSlice = createSlice({
     createCocktail: (state, action) => {
       state.cocktails.push(action.payload);
     },
+    editCocktail: (state, action) => {
+      state.cocktails.maps((cocktail) => {
+        if (cocktail.id === action.payload.id) console.log(cocktail);
+      });
+    },
   },
 });
 
-export const { getCocktails, createCocktail } = cocktailSlice.actions;
+export const { getCocktails, createCocktail, editCocktail } =
+  cocktailSlice.actions;
 
 export default cocktailSlice.reducer;

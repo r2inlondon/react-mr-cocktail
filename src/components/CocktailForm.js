@@ -2,11 +2,14 @@ import React from "react";
 import { v4 as uuidv4 } from "uuid";
 
 export default class CocktailForm extends React.Component {
-  state = {
-    id: uuidv4(),
-    cocktailName: "",
-  };
+  constructor(props) {
+    super(props);
 
+    this.state = {
+      id: props.cocktail ? props.cocktail.id : uuidv4(),
+      cocktailName: props.cocktail ? props.cocktail.cocktailName : "",
+    };
+  }
   onNameChange = (e) => {
     const cocktailName = e.target.value;
 

@@ -1,14 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
-import ListCocktialItem from "./ListCocktailItem";
+import ListCocktailItem from "./ListCocktailItem";
 
 const ListsCocktails = (props) => {
   //   console.log(props);
   return (
     <div>
       {props.cocktails.map((cocktail) => {
-        console.log(cocktail);
-        return <ListCocktialItem key={cocktail.id} {...cocktail} />;
+        return <ListCocktailItem key={cocktail.id} {...cocktail} />;
       })}
     </div>
   );
