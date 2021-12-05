@@ -8,6 +8,7 @@ export default class CocktailForm extends React.Component {
     this.state = {
       id: props.cocktail ? props.cocktail.id : uuidv4(),
       cocktailName: props.cocktail ? props.cocktail.cocktailName : "",
+      error: "",
     };
   }
   onNameChange = (e) => {
@@ -21,15 +22,25 @@ export default class CocktailForm extends React.Component {
   onSubmit = (e) => {
     e.preventDefault();
 
-    this.props.onSubmit({
-      id: this.state.id,
-      cocktailName: this.state.cocktailName,
-    });
+    let cocktailName = this.state.cocktailName;
+
+    if (cocktailName) {
+      console.log(this.state.cocktailName.lenght);
+      this.props.onSubmit({
+        id: this.state.id,
+        cocktailName,
+      });
+    } else {
+      this.setState(() => ({
+        error: "Enter a cocktail name",
+      }));
+    }
   };
 
   render() {
     return (
       <div>
+        {this.state.error && <p>{this.state.error}</p>}
         <form onSubmit={this.onSubmit}>
           <input
             type="text"
