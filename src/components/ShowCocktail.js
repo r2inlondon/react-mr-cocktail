@@ -1,25 +1,17 @@
 import React from "react";
 import { connect } from "react-redux";
-import { useParams, useNavigate } from "react-router";
+import { useParams } from "react-router";
+import ShowIngredients from "./ShowIngredients";
 
 const ShowCocktail = (props) => {
   let { id } = useParams();
-  const cocktail = props.cocktails.find((cocktail) => {
+  const theCocktail = props.cocktails.find((cocktail) => {
     return cocktail.id === id;
   });
 
   return (
     <div>
-      <h2>{cocktail.name}</h2>
-      {cocktail.ingredients.map((ingredient, index) => {
-        console.log(ingredient);
-        return (
-          <div key={index + 200}>
-            <p key={index}>{ingredient}</p>
-            <button key={index + 100}>remove</button>;
-          </div>
-        );
-      })}
+      <ShowIngredients cocktail={theCocktail} />
     </div>
   );
 };
