@@ -4,12 +4,12 @@ import { v4 as uuidv4 } from "uuid";
 export const initialState = [
   {
     id: uuidv4(),
-    cocktailName: "Margarita",
+    name: "Margarita",
     ingredients: ["50ml of tequila", "20ml of lime juice"],
   },
   {
     id: uuidv4(),
-    cocktailName: "Mojito",
+    name: "Mojito",
     ingredients: ["50ml of Rum", "Bunch of mint"],
   },
 ];
@@ -25,10 +25,10 @@ const cocktailSlice = createSlice({
       state.push(action.payload);
     },
     editCocktail(state, action) {
-      const { id, cocktailName } = action.payload;
+      const { id, name } = action.payload;
       const existingCocktail = state.find((cocktail) => cocktail.id === id);
       if (existingCocktail) {
-        existingCocktail.cocktailName = cocktailName;
+        existingCocktail.name = name;
       }
     },
     addIngredients(state, action) {

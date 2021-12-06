@@ -7,10 +7,14 @@ const ShowCocktail = (props) => {
   const cocktail = props.cocktails.find((cocktail) => {
     return cocktail.id === id;
   });
-  console.log(cocktail);
+  // console.log(cocktail);
   return (
     <div>
-      <h2>{cocktail.cocktailName}</h2>
+      <h2>{cocktail.name}</h2>
+      {cocktail.ingredients.map((ingredient) => {
+        console.log(ingredient);
+        return <p>{ingredient}</p>;
+      })}
     </div>
   );
 };

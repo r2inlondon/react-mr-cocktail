@@ -7,28 +7,28 @@ export default class CocktailForm extends React.Component {
 
     this.state = {
       id: props.cocktail ? props.cocktail.id : uuidv4(),
-      cocktailName: props.cocktail ? props.cocktail.cocktailName : "",
+      name: props.cocktail ? props.cocktail.name : "",
       error: "",
     };
   }
   onNameChange = (e) => {
-    const cocktailName = e.target.value;
+    const name = e.target.value;
 
     this.setState(() => ({
-      cocktailName,
+      name,
     }));
   };
 
   onSubmit = (e) => {
     e.preventDefault();
 
-    let cocktailName = this.state.cocktailName;
+    let name = this.state.name;
 
-    if (cocktailName) {
-      console.log(this.state.cocktailName.lenght);
+    if (name) {
+      console.log(this.state.name.lenght);
       this.props.onSubmit({
         id: this.state.id,
-        cocktailName,
+        name,
       });
     } else {
       this.setState(() => ({
@@ -46,7 +46,7 @@ export default class CocktailForm extends React.Component {
             type="text"
             placeholder="Cocktail name"
             autoFocus
-            value={this.state.cocktailName}
+            value={this.state.name}
             onChange={this.onNameChange}
           ></input>
           <button>Add</button>
