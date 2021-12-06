@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import reportWebVitals from "./reportWebVitals";
 import App from "./routers/AppRouter";
-import store from "./store/configureStore";
+import { store } from "./store/configureStore";
 
 const jsx = (
   <React.StrictMode>

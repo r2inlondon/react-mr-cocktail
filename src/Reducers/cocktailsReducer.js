@@ -30,10 +30,18 @@ const cocktailSlice = createSlice({
         existingCocktail.cocktailName = cocktailName;
       }
     },
+    addIngredients(state, action) {
+      const { id, ingredients } = action.payload;
+      console.log(action.payload);
+      const existingCocktail = state.find((cocktail) => cocktail.id === id);
+      if (existingCocktail) {
+        existingCocktail.ingredients.push(ingredients);
+      }
+    },
   },
 });
 
-export const { getCocktails, createCocktail, editCocktail } =
+export const { getCocktails, createCocktail, editCocktail, addIngredients } =
   cocktailSlice.actions;
 
 export default cocktailSlice.reducer;
