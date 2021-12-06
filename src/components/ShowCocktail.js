@@ -8,7 +8,11 @@ const ShowCocktail = (props) => {
     return cocktail.id === id;
   });
   console.log(cocktail);
-  return <div></div>;
+  return (
+    <div>
+      <h2>{cocktail.cocktailName}</h2>
+    </div>
+  );
 };
 
 const mapStateToProps = (state) => {
