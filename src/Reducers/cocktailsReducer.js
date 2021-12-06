@@ -1,13 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { v4 as uuidv4 } from "uuid";
 
 export const initialState = [
   {
-    id: 1,
+    id: uuidv4(),
     cocktailName: "Margarita",
     ingredients: ["50ml of tequila", "20ml of lime juice"],
   },
   {
-    id: 2,
+    id: uuidv4(),
     cocktailName: "Mojito",
     ingredients: ["50ml of Rum", "Bunch of mint"],
   },
