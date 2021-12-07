@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 
 export const initialState = [
   {
-    id: uuidv4(),
+    id: "777e3c9f-ea64-4206-8e41-7290ba9ae130",
     name: "Margarita",
     ingredients: ["50ml of tequila", "20ml of lime juice"],
   },
@@ -39,10 +39,31 @@ const cocktailSlice = createSlice({
         existingCocktail.ingredients.push(ingredients);
       }
     },
+    removeIngredient(state, action) {
+      const { id, ingredient } = action.payload;
+      const existingCocktail = state.find((cocktail) => cocktail.id === id);
+      console.log(existingCocktail);
+
+      if (existingCocktail) {
+        console.log(ingredient[0]);
+        existingCocktail.ingredients.forEach((existingIngredient, index) => {
+          console.log(existingIngredient);
+          if (existingIngredient === ingredient) {
+            console.log("found", ingredient);
+            existingCocktail.ingredients.splice(index, 1);
+          }
+        });
+      }
+    },
   },
 });
 
-export const { getCocktails, createCocktail, editCocktail, addIngredients } =
-  cocktailSlice.actions;
+export const {
+  getCocktails,
+  createCocktail,
+  editCocktail,
+  addIngredients,
+  removeIngredient,
+} = cocktailSlice.actions;
 
 export default cocktailSlice.reducer;
