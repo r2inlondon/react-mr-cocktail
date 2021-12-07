@@ -1,8 +1,7 @@
 import React from "react";
-import { addIngredients } from "../Reducers/cocktailsReducer";
 
 const ShowIngredients = (props) => {
-  const { id, name, ingredients } = props.cocktail;
+  const { name, ingredients } = props.cocktail;
 
   let validateIngredients = ingredients.length > 0 ? true : false;
 
@@ -25,9 +24,9 @@ const GetIngredients = (props) => {
     <div>
       {props.ingredients.map((ingredient, index) => {
         return (
-          <div key={index + 200}>
+          <div key={index + 100}>
             <p key={index}>{ingredient}</p>
-            <button key={index + 100} onClick={props.removeIngredientButton}>
+            <button key={index + 200} onClick={props.removeIngredientButton}>
               remove
             </button>
             ;

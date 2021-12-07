@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { useParams, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import { createCocktail } from "../Reducers/cocktailsReducer";
 import CocktailForm from "./CocktailForm";
 
