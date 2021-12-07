@@ -13,6 +13,10 @@ const ShowCocktail = (props) => {
     return cocktail.id === id;
   });
 
+  const removeIngredientButton = () => {
+    console.log("removed");
+  };
+
   const onSubmit = (e) => {
     e.preventDefault();
 
@@ -27,7 +31,10 @@ const ShowCocktail = (props) => {
 
   return (
     <div>
-      <ShowIngredients cocktail={theCocktail} />
+      <ShowIngredients
+        cocktail={theCocktail}
+        removeIngredientButton={removeIngredientButton}
+      />
       {error && <p>{error}</p>}
       <form onSubmit={onSubmit}>
         <input

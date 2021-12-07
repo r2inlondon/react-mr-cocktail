@@ -9,19 +9,28 @@ const ShowIngredients = (props) => {
   return (
     <div>
       <h2>{name}</h2>
-      {validateIngredients && <GetIngredients ingredients={ingredients} />}
+      {validateIngredients && (
+        <GetIngredients
+          ingredients={ingredients}
+          removeIngredientButton={props.removeIngredientButton}
+        />
+      )}
     </div>
   );
 };
 
 const GetIngredients = (props) => {
+  console.log(props);
   return (
     <div>
       {props.ingredients.map((ingredient, index) => {
         return (
           <div key={index + 200}>
             <p key={index}>{ingredient}</p>
-            <button key={index + 100}>remove</button>;
+            <button key={index + 100} onClick={props.removeIngredientButton}>
+              remove
+            </button>
+            ;
           </div>
         );
       })}
