@@ -1,9 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
 import reportWebVitals from "./reportWebVitals";
 import App from "./routers/AppRouter";
+import { store } from "./store/configureStore";
 
-const jsx = <App />;
+const jsx = (
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>
+);
 
 ReactDOM.render(jsx, document.getElementById("root"));
 
