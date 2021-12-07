@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { useParams } from "react-router";
 import ShowIngredients from "./ShowIngredients";
-import { addIngredients } from "../Reducers/cocktailsReducer";
+import { addIngredients, removeIngredient } from "../Reducers/cocktailsReducer";
 
 const ShowCocktail = (props) => {
   const [ingredient, setIngredient] = useState("");
@@ -13,8 +13,10 @@ const ShowCocktail = (props) => {
     return cocktail.id === id;
   });
 
-  const removeIngredientButton = () => {
-    console.log("removed");
+  const removeIngredientButton = (e) => {
+    const ingredient = e.target.previousElementSibling.innerText;
+
+    props.dispatch(removeIngredient({ id, ingredient }));
   };
 
   const onSubmit = (e) => {

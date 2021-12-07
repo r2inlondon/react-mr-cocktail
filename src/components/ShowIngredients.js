@@ -20,7 +20,6 @@ const ShowIngredients = (props) => {
 };
 
 const GetIngredients = (props) => {
-  console.log(props);
   return (
     <div>
       {props.ingredients.map((ingredient, index) => {
