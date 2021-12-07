@@ -3,11 +3,22 @@ import { addIngredients } from "../Reducers/cocktailsReducer";
 
 const ShowIngredients = (props) => {
   const { name, ingredients } = props.cocktail;
-  console.log(ingredients);
+
+  let validateIngredients = ingredients.length > 0 ? true : false;
+
+  console.log(ingredients, validateIngredients);
   return (
     <div>
       <h2>{name}</h2>
-      {ingredients.map((ingredient, index) => {
+      {validateIngredients && <GetIngredients ingredients={ingredients} />}
+    </div>
+  );
+};
+
+const GetIngredients = (props) => {
+  return (
+    <div>
+      {props.ingredients.map((ingredient, index) => {
         return (
           <div key={index + 200}>
             <p key={index}>{ingredient}</p>

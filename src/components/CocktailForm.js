@@ -8,14 +8,17 @@ export default class CocktailForm extends React.Component {
     this.state = {
       id: props.cocktail ? props.cocktail.id : uuidv4(),
       name: props.cocktail ? props.cocktail.name : "",
+      ingredients: "",
       error: "",
     };
   }
   onNameChange = (e) => {
     const name = e.target.value;
+    const ingredients = [];
 
     this.setState(() => ({
       name,
+      ingredients,
     }));
   };
 
@@ -23,12 +26,13 @@ export default class CocktailForm extends React.Component {
     e.preventDefault();
 
     let name = this.state.name;
+    const ingredients = this.state.ingredients;
 
     if (name) {
-      console.log(this.state.name.lenght);
       this.props.onSubmit({
         id: this.state.id,
         name,
+        ingredients,
       });
     } else {
       this.setState(() => ({
