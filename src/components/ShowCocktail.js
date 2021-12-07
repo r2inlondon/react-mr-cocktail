@@ -41,7 +41,7 @@ const ShowCocktail = (props) => {
       <form onSubmit={onSubmit}>
         <input
           type="text"
-          placeholder="Add Ingredients"
+          placeholder="Add an ingredient"
           autoFocus
           value={ingredient}
           onChange={(e) => setIngredient(e.target.value)}

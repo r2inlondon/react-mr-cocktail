@@ -8,7 +8,8 @@ const ShowIngredients = (props) => {
 
   return (
     <div>
-      <h2>{name}</h2>
+      <h1>{name}</h1>
+      <h3>INGREDIENTS</h3>
       {validateIngredients && (
         <GetIngredients
           ingredients={ingredients}
