@@ -6,6 +6,7 @@ import { addIngredients } from "../Reducers/cocktailsReducer";
 
 const ShowCocktail = (props) => {
   const [ingredient, setIngredient] = useState("");
+  const [error, setError] = useState("");
 
   let { id } = useParams();
   const theCocktail = props.cocktails.find((cocktail) => {
@@ -15,12 +16,19 @@ const ShowCocktail = (props) => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    props.dispatch(addIngredients({ id, ingredients: ingredient }));
+    if (ingredient) {
+      props.dispatch(addIngredients({ id, ingredients: ingredient }));
+      setIngredient("");
+      setError("");
+    } else {
+      setError("Enter an ingredient");
+    }
   };
 
   return (
     <div>
       <ShowIngredients cocktail={theCocktail} />
+      {error && <p>{error}</p>}
       <form onSubmit={onSubmit}>
         <input
           type="text"
@@ -36,8 +44,6 @@ const ShowCocktail = (props) => {
 };
 
 const mapStateToProps = (state) => {
-  //   console.log("mapToProps", state);
-
   return {
     cocktails: state.cocktails,
   };
