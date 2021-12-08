@@ -1,61 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-export default class CocktailForm extends React.Component {
-  constructor(props) {
-    super(props);
+const CocktailForm = (props) => {
+  const [idState, setIdState] = useState(
+    props.cocktail ? props.cocktail.id : uuidv4()
+  );
+  const [nameState, setNameState] = useState(
+    props.cocktail ? props.cocktail.name : ""
+  );
+  const [ingredientsState, setIngredientsState] = useState([]);
+  const [errorState, setErrorState] = useState("");
 
-    this.state = {
-      id: props.cocktail ? props.cocktail.id : uuidv4(),
-      name: props.cocktail ? props.cocktail.name : "",
-      ingredients: "",
-      error: "",
-    };
-  }
-  onNameChange = (e) => {
+  const onNameChange = (e) => {
     const name = e.target.value;
-    const ingredients = [];
 
-    this.setState(() => ({
-      name,
-      ingredients,
-    }));
+    setNameState(name);
   };
 
-  onSubmit = (e) => {
+  const onSubmit = (e) => {
     e.preventDefault();
 
-    let name = this.state.name;
-    const ingredients = this.state.ingredients;
+    let name = nameState;
+    const ingredients = ingredientsState;
 
     if (name) {
-      this.props.onSubmit({
-        id: this.state.id,
+      props.onSubmit({
+        id: idState,
         name,
         ingredients,
       });
     } else {
-      this.setState(() => ({
-        error: "Enter a cocktail name",
-      }));
+      setErrorState("Enter a cocktail name");
     }
   };
 
-  render() {
-    return (
-      <div>
-        {this.state.error && <p>{this.state.error}</p>}
-        <form onSubmit={this.onSubmit}>
-          <input
-            type="text"
-            placeholder="Cocktail name"
-            autoFocus
-            value={this.state.name}
-            onChange={this.onNameChange}
-          ></input>
-          <button>Add</button>
-        </form>
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      {errorState && <p>{errorState}</p>}
+      <form onSubmit={onSubmit}>
+        <input
+          type="text"
+          placeholder="Cocktail name"
+          autoFocus
+          value={nameState}
+          onChange={onNameChange}
+        ></input>
+        <button>Add</button>
+      </form>
+    </div>
+  );
+};
+
+export default CocktailForm;
