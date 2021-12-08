@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import reportWebVitals from "./reportWebVitals";
 import App from "./routers/AppRouter";
 import { store } from "./store/configureStore";
+import "./firebase/firebase";
 
 const jsx = (
   <React.StrictMode>
