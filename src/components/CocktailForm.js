@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import Modal from "./modal";
 
 const CocktailForm = (props) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const [idState, setIdState] = useState(
     props.cocktail ? props.cocktail.id : uuidv4()
   );
@@ -17,6 +20,14 @@ const CocktailForm = (props) => {
     setNameState(name);
   };
 
+  const showModal = () => {
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+
   const onSubmit = (e) => {
     e.preventDefault();
 
@@ -29,6 +40,7 @@ const CocktailForm = (props) => {
         name,
         ingredients,
       });
+      showModal();
     } else {
       setErrorState("Enter a cocktail name");
     }
@@ -47,6 +59,9 @@ const CocktailForm = (props) => {
         ></input>
         <button>Add</button>
       </form>
+      <Modal openModal={isOpen} closeModal={closeModal}>
+        <p>Now Add the ingredients</p>
+      </Modal>
     </div>
   );
 };

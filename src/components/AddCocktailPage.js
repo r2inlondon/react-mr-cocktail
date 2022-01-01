@@ -13,7 +13,7 @@ const AddCocktailPage = ({ dispatch }) => {
       <CocktailForm
         onSubmit={(cocktail) => {
           dispatch(createCocktail(cocktail));
-          navigate(`/edit/${cocktail.id}`);
+          // navigate(`/edit/${cocktail.id}`);
         }}
       />
     </div>
