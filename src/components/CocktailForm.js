@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router";
 import { v4 as uuidv4 } from "uuid";
 import Modal from "./modal";
 
 const CocktailForm = (props) => {
+  let navigate = useNavigate();
+
   const [isOpen, setIsOpen] = useState(false);
 
   const [idState, setIdState] = useState(
@@ -26,6 +29,7 @@ const CocktailForm = (props) => {
 
   const closeModal = () => {
     setIsOpen(false);
+    navigate(`/edit/${idState}`);
   };
 
   const onSubmit = (e) => {
