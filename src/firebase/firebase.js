@@ -16,8 +16,8 @@ const config = {
 // Initialize Firebase
 firebase.initializeApp(config);
 
-const db = firebase.database();
+export const db = firebase.database();
 
-db.ref().set({
-  name: "Juan Camaney",
-});
+// db.ref().set({
+//   name: "Juan Camaney",
+// });

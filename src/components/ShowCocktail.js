@@ -5,6 +5,8 @@ import ShowIngredients from "./ShowIngredients";
 import { addIngredients, removeIngredient } from "../Reducers/cocktailsReducer";
 
 const ShowCocktail = (props) => {
+  console.log(props);
+
   const [ingredient, setIngredient] = useState("");
   const [error, setError] = useState("");
 
@@ -12,6 +14,8 @@ const ShowCocktail = (props) => {
   const theCocktail = props.cocktails.find((cocktail) => {
     return cocktail.id === id;
   });
+
+  console.log("ShowCocktail", theCocktail);
 
   const removeIngredientButton = (e) => {
     const ingredient = e.target.previousElementSibling.innerText;

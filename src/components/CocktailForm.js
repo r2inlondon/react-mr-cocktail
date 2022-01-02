@@ -40,7 +40,6 @@ const CocktailForm = (props) => {
 
     if (name) {
       props.onSubmit({
-        id: idState,
         name,
         ingredients,
       });

@@ -1,6 +1,7 @@
 import React from "react";
 
 const ShowIngredients = (props) => {
+  // console.log("ShowIngredients", props);
   const { name, ingredients } = props.cocktail;
 
   let validateIngredients = ingredients.length > 0 ? true : false;

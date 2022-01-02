@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { db } from "../firebase/firebase";
 import { v4 as uuidv4 } from "uuid";
 
 export const initialState = [
@@ -18,8 +19,8 @@ const cocktailSlice = createSlice({
   name: "cocktails",
   initialState,
   reducers: {
-    getCocktails(state, action) {
-      state = action.payload;
+    setCocktails(state, action) {
+      return (state = action.payload);
     },
     createCocktail(state, action) {
       state.push(action.payload);
@@ -53,8 +54,44 @@ const cocktailSlice = createSlice({
   },
 });
 
+export const startCreateCocktail = (cocktail) => {
+  return (dispatch) => {
+    const { name } = cocktail;
+    console.log(name);
+    db.ref("cocktails")
+      .push(cocktail)
+      .then((ref) => {
+        dispatch(
+          createCocktail({
+            id: ref.key,
+            name,
+          })
+        );
+      });
+  };
+};
+
+export const startSetCocktails = () => {
+  return (dispatch) => {
+    return db
+      .ref("cocktails")
+      .once("value")
+      .then((snapshot) => {
+        const cocktails = [];
+
+        snapshot.forEach((childSnapshot) => {
+          cocktails.push({
+            id: childSnapshot.key,
+            ...childSnapshot.val(),
+          });
+        });
+        dispatch(setCocktails(cocktails));
+      });
+  };
+};
+
 export const {
-  getCocktails,
+  setCocktails,
   createCocktail,
   editCocktail,
   addIngredients,
