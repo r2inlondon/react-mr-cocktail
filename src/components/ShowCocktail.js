@@ -10,13 +10,8 @@ const ShowCocktail = (props) => {
 
   let { id } = useParams();
   const theCocktail = props.cocktails.find((cocktail) => {
-    console.log(cocktail);
     return cocktail.id === id;
   });
-
-  console.log("props", props);
-  console.log("params", id);
-  console.log("ShowCocktail", theCocktail);
 
   const removeIngredientButton = (e) => {
     const ingredient = e.target.previousElementSibling.innerText;

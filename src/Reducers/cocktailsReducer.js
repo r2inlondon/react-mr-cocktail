@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 import { db } from "../firebase/firebase";
 import { v4 as uuidv4 } from "uuid";
 
@@ -34,10 +34,17 @@ const cocktailSlice = createSlice({
     },
     addIngredients(state, action) {
       const { id, ingredients } = action.payload;
-      const existingCocktail = state.find((cocktail) => cocktail.id === id);
-      if (existingCocktail) {
-        existingCocktail.ingredients.push(ingredients);
-      }
+      const existingCocktail = current(state).find(
+        (cocktail) => cocktail.id === id
+      );
+      console.log(existingCocktail);
+
+      // if (existingCocktail) {
+      //   // existingCocktail.ingredients.push(ingredients);
+      //   existingCocktail.ingredients.map((ingredient, index) => {
+      //     return (existingCocktail.ingredients[index] = ingredient);
+      //   });
+      // }
     },
     removeIngredient(state, action) {
       const { id, ingredient } = action.payload;
