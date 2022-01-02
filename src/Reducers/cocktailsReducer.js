@@ -56,7 +56,7 @@ const cocktailSlice = createSlice({
 
 export const startCreateCocktail = (cocktail) => {
   return (dispatch) => {
-    const { name } = cocktail;
+    const { name, ingredients } = cocktail;
     db.ref("cocktails")
       .push(cocktail)
       .then((ref) => {
@@ -64,6 +64,7 @@ export const startCreateCocktail = (cocktail) => {
           createCocktail({
             id: ref.key,
             name,
+            ingredients,
           })
         );
       });

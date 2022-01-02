@@ -18,6 +18,7 @@ firebase.initializeApp(config);
 
 export const db = firebase.database();
 
-// db.ref().set({
-//   name: "Juan Camaney",
+// db.ref("cocktails").set({
+//   name: "Static Cocktail",
+//   ingredients: { key: "slice of lemon", key1: "50ml tequila" },
 // });
