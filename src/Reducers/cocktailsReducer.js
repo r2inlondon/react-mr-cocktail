@@ -57,7 +57,6 @@ const cocktailSlice = createSlice({
 export const startCreateCocktail = (cocktail) => {
   return (dispatch) => {
     const { name } = cocktail;
-    console.log(name);
     db.ref("cocktails")
       .push(cocktail)
       .then((ref) => {

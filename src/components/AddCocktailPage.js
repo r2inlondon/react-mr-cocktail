@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 import { startCreateCocktail } from "../Reducers/cocktailsReducer";
 import CocktailForm from "./CocktailForm";
@@ -7,7 +7,6 @@ import CocktailForm from "./CocktailForm";
 const AddCocktailPage = () => {
   const dispatch = useDispatch();
   let navigate = useNavigate();
-  const cocktailsState = useSelector((state) => state.cocktails);
 
   return (
     <div>
@@ -15,8 +14,8 @@ const AddCocktailPage = () => {
       <CocktailForm
         onSubmit={(cocktail) => {
           dispatch(startCreateCocktail(cocktail));
-          console.log(cocktailsState);
-          // navigate(`/edit/${cocktail.id}`);
+
+          // navigate(`/edit/${myCocktail.id}`);
         }}
       />
     </div>
