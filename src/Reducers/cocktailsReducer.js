@@ -34,17 +34,12 @@ const cocktailSlice = createSlice({
     },
     addIngredients(state, action) {
       const { id, ingredients } = action.payload;
-      const existingCocktail = current(state).find(
-        (cocktail) => cocktail.id === id
-      );
+      const existingCocktail = state.find((cocktail) => cocktail.id === id);
       console.log(existingCocktail);
 
-      // if (existingCocktail) {
-      //   // existingCocktail.ingredients.push(ingredients);
-      //   existingCocktail.ingredients.map((ingredient, index) => {
-      //     return (existingCocktail.ingredients[index] = ingredient);
-      //   });
-      // }
+      if (existingCocktail) {
+        existingCocktail.ingredients.push(ingredients);
+      }
     },
     removeIngredient(state, action) {
       const { id, ingredient } = action.payload;
