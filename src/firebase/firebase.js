@@ -18,7 +18,14 @@ firebase.initializeApp(config);
 
 export const db = firebase.database();
 
-// db.ref("cocktails").set({
-//   name: "Static Cocktail",
-//   ingredients: { key: "slice of lemon", key1: "50ml tequila" },
+// db.ref("cocktails").push({
+//   name: "Margarita",
+//   ingredients: ["Lemon", "Tequila"],
 // });
+
+// db.ref("cocktails").push({
+//   name: "Martini",
+//   ingredients: ["50 ml Vodka", "Olives"],
+// });
+
+// db.ref("cocktails/-Msauotg4pI2KDu0PLKH/ingredients/3").set("ice");
