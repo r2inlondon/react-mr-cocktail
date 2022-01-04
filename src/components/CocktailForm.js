@@ -14,7 +14,7 @@ const CocktailForm = (props) => {
   const [nameState, setNameState] = useState(
     props.cocktail ? props.cocktail.name : ""
   );
-  const [ingredientsState, setIngredientsState] = useState([]);
+  const [ingredientsState, setIngredientsState] = useState([0]);
   const [errorState, setErrorState] = useState("");
 
   const onNameChange = (e) => {
