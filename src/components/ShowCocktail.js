@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 import { useParams } from "react-router";
 import ShowIngredients from "./ShowIngredients";
 import { addIngredients, removeIngredient } from "../Reducers/cocktailsReducer";
+import { startAddIngredient } from "../firebase/firebaseFunctions";
 
 const ShowCocktail = (props) => {
+  const dispatch = useDispatch();
+
   const [ingredient, setIngredient] = useState("");
   const [error, setError] = useState("");
 
@@ -15,15 +18,17 @@ const ShowCocktail = (props) => {
 
   const removeIngredientButton = (e) => {
     const ingredient = e.target.previousElementSibling.innerText;
-
-    props.dispatch(removeIngredient({ id, ingredient }));
+    // removed props.dispatch
+    dispatch(removeIngredient({ id, ingredient }));
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
 
+    const key = theCocktail.ingredients.length;
+
     if (ingredient) {
-      props.dispatch(addIngredients({ id, ingredients: ingredient }));
+      dispatch(startAddIngredient({ id, ingredients: ingredient, key }));
       setIngredient("");
       setError("");
     } else {

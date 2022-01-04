@@ -29,3 +29,9 @@ export const db = firebase.database();
 // });
 
 // db.ref("cocktails/-Msauotg4pI2KDu0PLKH/ingredients/3").set("ice");
+
+// const id = "-Msb6HqPrNffyK-m7A5a",
+//   key = 1,
+//   ingredients = "Lemon";
+
+// db.ref(`cocktails/${id}/ingredients/${key}`).set(ingredients);

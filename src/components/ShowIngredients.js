@@ -9,12 +9,12 @@ const ShowIngredients = (props) => {
     <div>
       <h1>{name}</h1>
       <h3>INGREDIENTS</h3>
-      {/* {validateIngredients && (
+      {validateIngredients && (
         <GetIngredients
           ingredients={ingredients}
           removeIngredientButton={props.removeIngredientButton}
         />
-      )} */}
+      )}
     </div>
   );
 };
