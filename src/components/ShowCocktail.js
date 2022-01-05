@@ -3,7 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import ShowIngredients from "./ShowIngredients";
 import { addIngredients, removeIngredient } from "../Reducers/cocktailsReducer";
-import { startAddIngredient } from "../firebase/firebaseFunctions";
+import {
+  startAddIngredient,
+  startRemoveIngredient,
+} from "../firebase/firebaseFunctions";
 
 const ShowCocktail = () => {
   const dispatch = useDispatch();
@@ -19,7 +22,9 @@ const ShowCocktail = () => {
 
   const removeIngredientButton = (e) => {
     const ingredient = e.target.previousElementSibling.innerText;
-    dispatch(removeIngredient({ id, ingredient }));
+    const index = e.target.previousElementSibling.getAttribute("data-remove");
+    // dispatch(removeIngredient({ id, ingredient }));
+    dispatch(startRemoveIngredient({ id, ingredient, index }));
   };
 
   const onSubmit = (e) => {

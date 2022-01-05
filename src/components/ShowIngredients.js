@@ -26,7 +26,9 @@ const GetIngredients = (props) => {
         if (ingredient !== 0) {
           return (
             <div key={index + 100}>
-              <p key={index}>{ingredient}</p>
+              <p key={index} data-remove={index}>
+                {ingredient}
+              </p>
               <button key={index + 200} onClick={props.removeIngredientButton}>
                 remove
               </button>

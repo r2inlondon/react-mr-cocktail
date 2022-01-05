@@ -3,6 +3,7 @@ import {
   setCocktails,
   createCocktail,
   addIngredients,
+  removeIngredient,
 } from "../Reducers/cocktailsReducer";
 
 export const startSetCocktails = () => {
@@ -43,16 +44,32 @@ export const startCreateCocktail = (cocktail) => {
 
 // db.ref("cocktails/-Msauotg4pI2KDu0PLKH/ingredients/3").set("ice");
 
-export const startAddIngredient = (data) => {
+export const startAddIngredient = (cocktail) => {
   return (dispatch) => {
-    const { id, ingredients, key } = data;
+    const { id, ingredients, key } = cocktail;
     db.ref(`cocktails/${id}/ingredients/${key}`)
       .set(ingredients)
       .then(() => {
         dispatch(addIngredients({ id, ingredients }));
       })
       .catch((e) => {
-        console.log("this Failed", e);
+        console.log("Adding Ingredient Failed", e);
+      });
+  };
+};
+
+// db.ref("cocktails/-Msg-OjRJqgfQROVHWt9/ingredients/1").remove();
+
+export const startRemoveIngredient = (cocktail) => {
+  const { id, ingredient, index } = cocktail;
+  return (dispatch) => {
+    db.ref(`cocktails/${id}/ingredients/${index}`)
+      .remove()
+      .then(() => {
+        dispatch(removeIngredient({ id, ingredient }));
+      })
+      .catch((e) => {
+        console.log("Ingredient removal Failed", e);
       });
   };
 };
