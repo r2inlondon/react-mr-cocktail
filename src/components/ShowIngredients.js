@@ -23,15 +23,16 @@ const GetIngredients = (props) => {
   return (
     <div>
       {props.ingredients.map((ingredient, index) => {
-        return (
-          <div key={index + 100}>
-            <p key={index}>{ingredient}</p>
-            <button key={index + 200} onClick={props.removeIngredientButton}>
-              remove
-            </button>
-            ;
-          </div>
-        );
+        if (ingredient !== 0) {
+          return (
+            <div key={index + 100}>
+              <p key={index}>{ingredient}</p>
+              <button key={index + 200} onClick={props.removeIngredientButton}>
+                remove
+              </button>
+            </div>
+          );
+        }
       })}
     </div>
   );

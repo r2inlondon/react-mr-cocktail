@@ -49,7 +49,6 @@ export const startAddIngredient = (data) => {
     db.ref(`cocktails/${id}/ingredients/${key}`)
       .set(ingredients)
       .then(() => {
-        console.log({ id, ingredients });
         dispatch(addIngredients({ id, ingredients }));
       })
       .catch((e) => {
