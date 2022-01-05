@@ -1,24 +1,24 @@
 import React, { useState } from "react";
-import { connect, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import ShowIngredients from "./ShowIngredients";
 import { addIngredients, removeIngredient } from "../Reducers/cocktailsReducer";
 import { startAddIngredient } from "../firebase/firebaseFunctions";
 
-const ShowCocktail = (props) => {
+const ShowCocktail = () => {
   const dispatch = useDispatch();
+  const cocktails = useSelector((state) => state.cocktails);
 
   const [ingredient, setIngredient] = useState("");
   const [error, setError] = useState("");
 
   let { id } = useParams();
-  const theCocktail = props.cocktails.find((cocktail) => {
+  const theCocktail = cocktails.find((cocktail) => {
     return cocktail.id === id;
   });
 
   const removeIngredientButton = (e) => {
     const ingredient = e.target.previousElementSibling.innerText;
-    // removed props.dispatch
     dispatch(removeIngredient({ id, ingredient }));
   };
 
@@ -57,10 +57,4 @@ const ShowCocktail = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    cocktails: state.cocktails,
-  };
-};
-
-export default connect(mapStateToProps)(ShowCocktail);
+export default ShowCocktail;
