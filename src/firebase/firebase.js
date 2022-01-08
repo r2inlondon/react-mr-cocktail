@@ -1,6 +1,7 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import database from "firebase/compat/database";
+import "firebase/compat/storage";
 
 const config = {
   apiKey: "AIzaSyAthdb34t2QJUvpO8EJhA1d6ebAYdYRHl0",
@@ -16,7 +17,10 @@ const config = {
 // Initialize Firebase
 firebase.initializeApp(config);
 
-export const db = firebase.database();
+const db = firebase.database();
+const projectStorage = firebase.storage();
+
+export { db, projectStorage };
 
 // db.ref("cocktails").push({
 //   name: "Margarita",
