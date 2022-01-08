@@ -46,8 +46,8 @@ export const startCreateCocktail = (cocktail) => {
 
 export const startAddIngredient = (cocktail) => {
   return (dispatch) => {
-    const { id, ingredients, key } = cocktail;
-    db.ref(`cocktails/${id}/ingredients/${key}`)
+    const { id, ingredients, index } = cocktail;
+    db.ref(`cocktails/${id}/ingredients/${index}`)
       .set(ingredients)
       .then(() => {
         dispatch(addIngredients({ id, ingredients }));

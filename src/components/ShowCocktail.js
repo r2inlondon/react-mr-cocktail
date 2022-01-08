@@ -30,10 +30,10 @@ const ShowCocktail = () => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    const key = theCocktail.ingredients.length;
+    const index = theCocktail.ingredients.length;
 
     if (ingredient) {
-      dispatch(startAddIngredient({ id, ingredients: ingredient, key }));
+      dispatch(startAddIngredient({ id, ingredients: ingredient, index }));
       setIngredient("");
       setError("");
     } else {
