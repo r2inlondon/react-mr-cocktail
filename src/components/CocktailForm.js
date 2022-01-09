@@ -7,6 +7,7 @@ const CocktailForm = (props) => {
   let navigate = useNavigate();
 
   const [isOpen, setIsOpen] = useState(false);
+  const [errorState, setErrorState] = useState("");
 
   // const [idState, setIdState] = useState(
   //   props.cocktail ? props.cocktail.id : uuidv4()
@@ -14,8 +15,6 @@ const CocktailForm = (props) => {
   const [nameState, setNameState] = useState(
     props.cocktail ? props.cocktail.name : ""
   );
-  const [ingredientsState, setIngredientsState] = useState([0]);
-  const [errorState, setErrorState] = useState("");
 
   const onNameChange = (e) => {
     const name = e.target.value;
@@ -29,19 +28,23 @@ const CocktailForm = (props) => {
 
   const closeModal = (id) => {
     setIsOpen(false);
-    navigate(`/edit/${id}`);
+    // navigate(`/edit/${id}`);
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
 
     let name = nameState;
-    const ingredients = ingredientsState;
+    const ingredients = [0];
+
+    const defaultImage =
+      "https://firebasestorage.googleapis.com/v0/b/mr-cocktail-a9ab…ack.png?alt=media&token=11347eb3-41d4-478b-9508-539e91691991";
 
     if (name) {
       props.onSubmit({
         name,
         ingredients,
+        defaultImage,
       });
       showModal();
     } else {

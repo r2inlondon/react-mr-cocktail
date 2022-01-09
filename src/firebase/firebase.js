@@ -22,6 +22,25 @@ const projectStorage = firebase.storage();
 
 export { db, projectStorage };
 
+// **  Getting the image URL in storage
+// const storageRef = projectStorage.ref();
+
+// const starsRef = storageRef.child("images/black.png");
+
+// // Get the download URL
+// starsRef
+//   .getDownloadURL()
+//   .then((url) => {
+//     // Insert url into an <img> tag to "download"
+//     console.log(url);
+//   })
+//   .catch((error) => {
+//     // A full list of error codes is available at
+//     // https://firebase.google.com/docs/storage/web/handle-errors
+//     console.log(error);
+//   });
+
+// *** Testing basic firebase functionality
 // db.ref("cocktails").push({
 //   name: "Margarita",
 //   ingredients: ["Lemon", "Tequila"],

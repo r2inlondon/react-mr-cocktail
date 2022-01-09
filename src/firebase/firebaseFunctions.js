@@ -26,8 +26,9 @@ export const startSetCocktails = () => {
 };
 
 export const startCreateCocktail = (cocktail) => {
+  console.log(cocktail);
   return (dispatch) => {
-    const { name, ingredients } = cocktail;
+    const { name, ingredients, defaultImage } = cocktail;
     db.ref("cocktails")
       .push(cocktail)
       .then((ref) => {
@@ -36,6 +37,7 @@ export const startCreateCocktail = (cocktail) => {
             id: ref.key,
             name,
             ingredients,
+            defaultImage,
           })
         );
       });
