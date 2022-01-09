@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import ShowIngredients from "./ShowIngredients";
-import { addIngredients, removeIngredient } from "../Reducers/cocktailsReducer";
 import {
   startAddIngredient,
   startRemoveIngredient,
@@ -33,6 +32,7 @@ const ShowCocktail = () => {
     const index = theCocktail.ingredients.length;
 
     if (ingredient) {
+      // Send ingredient to firebase
       dispatch(startAddIngredient({ id, ingredients: ingredient, index }));
       setIngredient("");
       setError("");

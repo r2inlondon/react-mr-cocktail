@@ -37,8 +37,8 @@ const CocktailForm = (props) => {
     let name = nameState;
     const ingredients = [0];
 
-    const defaultImage =
-      "https://firebasestorage.googleapis.com/v0/b/mr-cocktail-a9ab…ack.png?alt=media&token=11347eb3-41d4-478b-9508-539e91691991";
+    const defaultImage = "default";
+    // "https://firebasestorage.googleapis.com/v0/b/mr-cocktail-a9ab4.appspot.com/o/images%2Fblack.png?alt=media&token=11347eb3-41d4-478b-9508-539e91691991";
 
     if (name) {
       props.onSubmit({

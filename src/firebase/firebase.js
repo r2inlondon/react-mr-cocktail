@@ -27,7 +27,7 @@ export { db, projectStorage };
 
 // const starsRef = storageRef.child("images/black.png");
 
-// // Get the download URL
+// Get the download URL
 // starsRef
 //   .getDownloadURL()
 //   .then((url) => {
