@@ -6,6 +6,7 @@ import App from "./routers/AppRouter";
 import { store } from "./store/configureStore";
 import "./firebase/firebase";
 import { startSetCocktails } from "./firebase/firebaseFunctions";
+import "./styles/styles.scss";
 
 const jsx = (
   <React.StrictMode>

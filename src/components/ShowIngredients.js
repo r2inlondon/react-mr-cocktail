@@ -4,8 +4,6 @@ import black from "../styles/images/black.png";
 const ShowIngredients = (props) => {
   let { name, defaultImage, ingredients } = props.cocktail;
 
-  console.log(defaultImage);
-
   if (defaultImage === "default") {
     defaultImage = black;
   }
@@ -14,8 +12,11 @@ const ShowIngredients = (props) => {
 
   return (
     <div>
-      <h1>{name}</h1>
-      <img src={defaultImage} alt={name} />
+      <div className="image-container">
+        <img src={defaultImage} alt={name} className="cocktail-image" />
+        <h1 className="cocktail-name">{name}</h1>
+      </div>
+
       <h3>INGREDIENTS</h3>
       {validateIngredients && (
         <GetIngredients

@@ -42,7 +42,7 @@ const ShowCocktail = () => {
   };
 
   return (
-    <div>
+    <div className="cocktail-container">
       <ShowIngredients
         cocktail={theCocktail}
         removeIngredientButton={removeIngredientButton}
