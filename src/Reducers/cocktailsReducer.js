@@ -51,6 +51,14 @@ const cocktailSlice = createSlice({
         });
       }
     },
+    addImage(state, action) {
+      const { id, url } = action.payload;
+      const existingCocktail = state.find((cocktail) => cocktail.id === id);
+
+      if (existingCocktail) {
+        existingCocktail.defaultImage = url;
+      }
+    },
   },
 });
 
@@ -60,6 +68,7 @@ export const {
   editCocktail,
   addIngredients,
   removeIngredient,
+  addImage,
 } = cocktailSlice.actions;
 
 export default cocktailSlice.reducer;

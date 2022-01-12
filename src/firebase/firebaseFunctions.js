@@ -4,6 +4,7 @@ import {
   createCocktail,
   addIngredients,
   removeIngredient,
+  addImage,
 } from "../Reducers/cocktailsReducer";
 
 export const startSetCocktails = () => {
@@ -26,7 +27,6 @@ export const startSetCocktails = () => {
 };
 
 export const startCreateCocktail = (cocktail) => {
-  console.log(cocktail);
   return (dispatch) => {
     const { name, ingredients, defaultImage } = cocktail;
     db.ref("cocktails")
@@ -82,7 +82,7 @@ export const startAddImage = (cocktail) => {
     db.ref(`cocktails/${id}/defaultImage/`)
       .set(url)
       .then(() => {
-        console.log("success");
+        dispatch(addImage({ id, url }));
       })
       .catch((e) => {
         console.log("Adding Ingredient Failed", e);
