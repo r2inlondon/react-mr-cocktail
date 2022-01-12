@@ -44,6 +44,22 @@ export const startCreateCocktail = (cocktail) => {
   };
 };
 
+// db.ref("cocktails/-Msg-OjRJqgfQROVHWt9/ingredients/1").remove();
+
+export const startRemoveIngredient = (cocktail) => {
+  const { id, ingredient, index } = cocktail;
+  return (dispatch) => {
+    db.ref(`cocktails/${id}/ingredients/${index}`)
+      .remove()
+      .then(() => {
+        dispatch(removeIngredient({ id, ingredient }));
+      })
+      .catch((e) => {
+        console.log("Ingredient removal Failed", e);
+      });
+  };
+};
+
 // db.ref("cocktails/-Msauotg4pI2KDu0PLKH/ingredients/3").set("ice");
 
 export const startAddIngredient = (cocktail) => {
@@ -60,18 +76,16 @@ export const startAddIngredient = (cocktail) => {
   };
 };
 
-// db.ref("cocktails/-Msg-OjRJqgfQROVHWt9/ingredients/1").remove();
-
-export const startRemoveIngredient = (cocktail) => {
-  const { id, ingredient, index } = cocktail;
+export const startAddImage = (cocktail) => {
+  const { id, url } = cocktail;
   return (dispatch) => {
-    db.ref(`cocktails/${id}/ingredients/${index}`)
-      .remove()
+    db.ref(`cocktails/${id}/defaultImage/`)
+      .set(url)
       .then(() => {
-        dispatch(removeIngredient({ id, ingredient }));
+        console.log("success");
       })
       .catch((e) => {
-        console.log("Ingredient removal Failed", e);
+        console.log("Adding Ingredient Failed", e);
       });
   };
 };
