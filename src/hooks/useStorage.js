@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { projectStorage } from "../firebase/firebase";
+import { useParams } from "react-router";
 
 const useStorage = (file) => {
   const [progress, setProgress] = useState(0);
   const [error, setError] = useState(null);
   const [url, setUrl] = useState(null);
+
+  const { id } = useParams();
 
   useEffect(() => {
     const storageRef = projectStorage.ref(`images/${file.name}`);
@@ -25,8 +28,8 @@ const useStorage = (file) => {
       }
     );
   }, [file]);
-  console.log(url);
-  return { progress, error, url };
+
+  return { progress, error, url, id };
 };
 
 export default useStorage;
