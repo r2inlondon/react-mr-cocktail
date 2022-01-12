@@ -1,21 +1,21 @@
 import React from "react";
 import black from "../styles/images/black.png";
+import { ShowUploadForm, ShowPhoto } from "./ShowPhoto";
 
 const ShowIngredients = (props) => {
   let { name, defaultImage, ingredients } = props.cocktail;
 
-  if (defaultImage === "default") {
-    defaultImage = black;
-  }
+  // if (defaultImage === 0) {
+  //   defaultImage = black;
+  // }
 
   let validateIngredients = ingredients.length > 0 ? true : false;
 
   return (
     <div>
-      <div className="image-container">
-        <img src={defaultImage} alt={name} className="cocktail-image" />
-        <h1 className="cocktail-name">{name}</h1>
-      </div>
+      {!defaultImage && <h1 className="cocktail-name">{name}</h1>}
+      {!defaultImage && <ShowUploadForm />}
+      {defaultImage && <ShowPhoto name={name} defaultImage={defaultImage} />}
 
       <h3>INGREDIENTS</h3>
       {validateIngredients && (

@@ -28,7 +28,7 @@ const CocktailForm = (props) => {
 
   const closeModal = (id) => {
     setIsOpen(false);
-    // navigate(`/edit/${id}`);
+    navigate(`/edit/${id}`);
   };
 
   const onSubmit = (e) => {
@@ -37,8 +37,7 @@ const CocktailForm = (props) => {
     let name = nameState;
     const ingredients = [0];
 
-    const defaultImage = "default";
-    // "https://firebasestorage.googleapis.com/v0/b/mr-cocktail-a9ab4.appspot.com/o/images%2Fblack.png?alt=media&token=11347eb3-41d4-478b-9508-539e91691991";
+    const defaultImage = 0;
 
     if (name) {
       props.onSubmit({
@@ -66,7 +65,7 @@ const CocktailForm = (props) => {
         <button>Add</button>
       </form>
       <Modal openModal={isOpen} closeModal={closeModal}>
-        <p>Now Add the ingredients</p>
+        <p>Now Add the ingredients and photo</p>
       </Modal>
     </div>
   );
