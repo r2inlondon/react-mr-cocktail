@@ -51,10 +51,6 @@ const ShowCocktail = () => {
       {!defaultImage && <ShowUploadForm />}
       {defaultImage && <ShowPhoto name={name} defaultImage={defaultImage} />}
 
-      <ShowIngredients
-        cocktail={theCocktail}
-        removeIngredientButton={removeIngredientButton}
-      />
       {error && <p>{error}</p>}
       <form onSubmit={onSubmit}>
         <input
@@ -66,6 +62,11 @@ const ShowCocktail = () => {
         ></input>
         <button>Add</button>
       </form>
+
+      <ShowIngredients
+        cocktail={theCocktail}
+        removeIngredientButton={removeIngredientButton}
+      />
     </div>
   );
 };
