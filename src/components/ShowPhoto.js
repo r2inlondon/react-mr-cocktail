@@ -5,10 +5,15 @@ export const ShowPhoto = ({ name, defaultImage }) => {
   return (
     <div className="image-container">
       <div className="head-image">
-        <img src={defaultImage} alt={name} className="cocktail-image" />
-      </div>
-      <div className="cocktail-name">
-        <h1>{name}</h1>
+        {/* <img src={defaultImage} alt={name} className="cocktail-image" /> */}
+        <div
+          className="cocktail-image"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(${defaultImage})`,
+          }}
+        >
+          <h1 className="cocktail-name">{name}</h1>
+        </div>
       </div>
     </div>
   );
