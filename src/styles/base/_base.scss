@@ -8,8 +8,7 @@
 //** Also, the root has been styled in _footer
 
 html,
-body,
-#root {
+body {
   height: 100%;
 }
 
@@ -19,5 +18,5 @@ html {
 }
 
 body {
-  font-family: Poppins;
+  font-family: $font-main;
 }

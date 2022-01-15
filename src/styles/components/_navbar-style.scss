@@ -1,0 +1,47 @@
+#navbar {
+  background: black;
+  width: 100%;
+  height: 9vh;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95vw;
+  height: 100%;
+  margin: auto;
+  text-decoration: none;
+}
+
+.fas {
+  color: $font-main-color;
+  font-size: $navbar-font-size;
+  &:hover {
+    color: #e684a6;
+    text-decoration: none;
+  }
+}
+
+.mr-c {
+  text-decoration: none;
+  color: $font-main-color;
+  font-family: "Dancing Script", cursive;
+  font-size: $navbar-font-size;
+  &:hover {
+    transition-duration: 0.3s;
+    transform: scale(1.2);
+  }
+}
+
+.add-cocktail {
+  text-decoration: none;
+  color: $font-main-color;
+  font-size: $navbar-small-font-size;
+  font-weight: lighter;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    color: #7db4cb;
+  }
+}

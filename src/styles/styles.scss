@@ -1,5 +1,6 @@
-@use "./base/settings";
-@use "./base/base";
-@use "./components/cocktail-card.scss";
-@use "./components/progress-bar";
-@use "./components/footer-style";
+@import "./base/settings";
+@import "./base/base";
+@import "./components/cocktail-card";
+@import "./components/progress-bar";
+@import "./components/footer-style";
+@import "./components/navbar-style";
