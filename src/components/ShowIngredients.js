@@ -1,9 +1,8 @@
 import React from "react";
 import black from "../styles/images/black.png";
-import { ShowUploadForm, ShowPhoto } from "./ShowPhoto";
 
 const ShowIngredients = (props) => {
-  let { name, defaultImage, ingredients } = props.cocktail;
+  let { ingredients } = props.cocktail;
 
   // if (defaultImage === 0) {
   //   defaultImage = black;
@@ -13,10 +12,6 @@ const ShowIngredients = (props) => {
 
   return (
     <div>
-      {!defaultImage && <h1 className="cocktail-name">{name}</h1>}
-      {!defaultImage && <ShowUploadForm />}
-      {defaultImage && <ShowPhoto name={name} defaultImage={defaultImage} />}
-
       <h3>INGREDIENTS</h3>
       {validateIngredients && (
         <GetIngredients

@@ -44,8 +44,6 @@ export const startCreateCocktail = (cocktail) => {
   };
 };
 
-// db.ref("cocktails/-Msg-OjRJqgfQROVHWt9/ingredients/1").remove();
-
 export const startRemoveIngredient = (cocktail) => {
   const { id, ingredient, index } = cocktail;
   return (dispatch) => {
@@ -59,8 +57,6 @@ export const startRemoveIngredient = (cocktail) => {
       });
   };
 };
-
-// db.ref("cocktails/-Msauotg4pI2KDu0PLKH/ingredients/3").set("ice");
 
 export const startAddIngredient = (cocktail) => {
   return (dispatch) => {

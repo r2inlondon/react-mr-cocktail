@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import ShowIngredients from "./ShowIngredients";
+import { ShowUploadForm, ShowPhoto } from "./ShowPhoto";
 import {
   startAddIngredient,
   startRemoveIngredient,
@@ -14,10 +15,13 @@ const ShowCocktail = () => {
   const [ingredient, setIngredient] = useState("");
   const [error, setError] = useState("");
 
-  let { id } = useParams();
+  // find the cocktail
+  const { id } = useParams();
   const theCocktail = cocktails.find((cocktail) => {
     return cocktail.id === id;
   });
+
+  const { name, defaultImage } = theCocktail;
 
   const removeIngredientButton = (e) => {
     const ingredient = e.target.previousElementSibling.innerText;
@@ -43,6 +47,10 @@ const ShowCocktail = () => {
 
   return (
     <div className="cocktail-container">
+      {!defaultImage && <h1 className="cocktail-name">{name}</h1>}
+      {!defaultImage && <ShowUploadForm />}
+      {defaultImage && <ShowPhoto name={name} defaultImage={defaultImage} />}
+
       <ShowIngredients
         cocktail={theCocktail}
         removeIngredientButton={removeIngredientButton}
