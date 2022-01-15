@@ -6,6 +6,7 @@ import AddCocktailPage from "../components/AddCocktailPage";
 import EditCocktailPage from "../components/EditCocktailPage";
 import ShowCocktail from "../components/ShowCocktail";
 import NavBar from "../components/NavBar";
+import Footer from "../components/footer";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         {/* <Route path="/edit/:id" element={<EditCocktailPage />} /> */}
         <Route path="/edit/:id" element={<ShowCocktail />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
