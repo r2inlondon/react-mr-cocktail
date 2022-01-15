@@ -3,11 +3,10 @@ import React from "react";
 const Banner = () => (
   <div className="banner">
     <div className="banner-container">
-      <h1>CRUD Web app built with React and Redux</h1>
+      <h1>Crud Web App built with React, Redux and Firebase</h1>
       <p>
-        Many Years ago I used to work as bartender and I really enjoy making
-        cocktails, for that reason I built this app for people to check and add
-        their favorite cocktail, try it out !
+        Check out our cocktails recipies and why not add your favorite cocktail
+        !
       </p>
     </div>
   </div>
