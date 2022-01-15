@@ -33,9 +33,13 @@ const GetIngredients = (props) => {
               <p key={index} data-remove={index}>
                 {ingredient}
               </p>
-              <button key={index + 200} onClick={props.removeIngredientButton}>
+              <a
+                href="#0"
+                key={index + 200}
+                onClick={props.removeIngredientButton}
+              >
                 remove
-              </button>
+              </a>
             </div>
           );
         }
