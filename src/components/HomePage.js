@@ -1,9 +1,11 @@
 import React from "react";
 import ListsCocktails from "./ListsCocktails";
+import Banner from "./Banner";
 
 const HomePage = () => (
   <div>
-    <h1>Drinks Menu</h1>
+    <Banner />
+    <h1>COCKTAILS AND RECIPIES</h1>
     <ListsCocktails />
   </div>
 );
