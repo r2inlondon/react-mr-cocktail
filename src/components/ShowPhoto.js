@@ -4,8 +4,12 @@ import UploadForm from "./UploadForm";
 export const ShowPhoto = ({ name, defaultImage }) => {
   return (
     <div className="image-container">
-      <img src={defaultImage} alt={name} className="cocktail-image" />
-      <h1 className="cocktail-name">{name}</h1>
+      <div className="head-image">
+        <img src={defaultImage} alt={name} className="cocktail-image" />
+      </div>
+      <div className="cocktail-name">
+        <h1>{name}</h1>
+      </div>
     </div>
   );
 };

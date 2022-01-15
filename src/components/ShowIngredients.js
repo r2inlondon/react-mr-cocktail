@@ -1,12 +1,7 @@
 import React from "react";
-import black from "../styles/images/black.png";
 
 const ShowIngredients = (props) => {
   let { ingredients } = props.cocktail;
-
-  // if (defaultImage === 0) {
-  //   defaultImage = black;
-  // }
 
   let validateIngredients = ingredients.length > 0 ? true : false;
 

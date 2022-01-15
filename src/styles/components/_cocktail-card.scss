@@ -1,10 +1,11 @@
 .cocktail-container {
   margin: auto;
   width: 30vw;
-  //   position: relative;
 }
 
 .image-container {
+  margin: auto;
+  position: relative;
 }
 
 .cocktail-image {
@@ -29,9 +30,11 @@
 }
 
 .cocktail-name {
-  //   color: white;
-  text-decoration: none;
-  //   position: absolute;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .ingredients-container {
