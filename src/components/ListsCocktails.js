@@ -1,24 +1,17 @@
 import React from "react";
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 import ListCocktailItem from "./ListCocktailItem";
 
 const ListsCocktails = (props) => {
-  //   console.log(props);
+  const cocktails = useSelector((state) => state.cocktails);
+
   return (
     <div>
-      {props.cocktails.map((cocktail) => {
+      {cocktails.map((cocktail) => {
         return <ListCocktailItem key={cocktail.id} {...cocktail} />;
       })}
     </div>
   );
 };
 
-const mapStateToProps = (state) => {
-  //   console.log("mapToProps", state);
-
-  return {
-    cocktails: state.cocktails,
-  };
-};
-
-export default connect(mapStateToProps)(ListsCocktails);
+export default ListsCocktails;
