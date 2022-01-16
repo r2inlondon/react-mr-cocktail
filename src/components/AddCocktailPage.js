@@ -7,13 +7,15 @@ const AddCocktailPage = () => {
   const dispatch = useDispatch();
 
   return (
-    <div>
-      <h1>Add a cocktail</h1>
-      <CocktailForm
-        onSubmit={(cocktail) => {
-          dispatch(startCreateCocktail(cocktail));
-        }}
-      />
+    <div className="add-cocktail-backgroud">
+      <div className="add-cocktail-container">
+        <h1 className="add-cocktail-title">Add a cocktail</h1>
+        <CocktailForm
+          onSubmit={(cocktail) => {
+            dispatch(startCreateCocktail(cocktail));
+          }}
+        />
+      </div>
     </div>
   );
 };

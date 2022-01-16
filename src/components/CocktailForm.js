@@ -52,15 +52,16 @@ const CocktailForm = (props) => {
   };
 
   return (
-    <div>
+    <div className="add-cocktail-form-container">
       {errorState && <p>{errorState}</p>}
       <form onSubmit={onSubmit}>
         <input
           type="text"
-          placeholder="Cocktail name"
+          placeholder="Enter name"
           autoFocus
           value={nameState}
           onChange={onNameChange}
+          className="add-cocktail-form"
         ></input>
         <button>Add</button>
       </form>

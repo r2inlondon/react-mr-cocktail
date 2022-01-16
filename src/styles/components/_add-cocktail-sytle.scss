@@ -1,0 +1,32 @@
+.add-cocktail-backgroud {
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../../assets/bartender-3.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.add-cocktail-container {
+  margin: auto;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  width: 40vw;
+  height: 40vh;
+}
+
+.add-cocktail-title {
+  //   margin: 4rem 0;
+  text-align: center;
+  padding-top: 4rem;
+  font-size: $home-page-sub-title-font;
+  color: $font-main-color;
+}
+
+.add-cocktail-form-container {
+  margin-top: 4rem;
+}
+
+.add-cocktail-form {
+  font-family: $font-main;
+  font-size: $small-font-size;
+}
