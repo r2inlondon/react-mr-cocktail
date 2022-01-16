@@ -23,10 +23,6 @@ const CocktailForm = (props) => {
     setNameState(name);
   };
 
-  const showModal = () => {
-    setIsOpen(true);
-  };
-
   const closeModal = (id) => {
     setIsOpen(false);
     navigate(`/edit/${id}`);
@@ -46,7 +42,7 @@ const CocktailForm = (props) => {
         ingredients,
         defaultImage,
       });
-      showModal();
+      setIsOpen(true);
     } else {
       setErrorState("Enter a cocktail name");
     }

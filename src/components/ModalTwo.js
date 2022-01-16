@@ -8,10 +8,12 @@ const ModalTwo = ({ openModal, closeModal }) => {
   // Get the last cocktail from the state
   let myCocktail = cocktailsState.slice(-1);
 
-  if (!openModal) return null;
-
   return (
-    <Modal isOpen={closeModal} contentLabel="Cocktail has been created">
+    <Modal
+      isOpen={openModal}
+      contentLabel="Cocktail has been created"
+      ariaHideApp={false}
+    >
       <p>Now Add the ingredients and photo</p>
       <button onClick={() => closeModal(myCocktail[0].id)}>Close Modal</button>
     </Modal>
