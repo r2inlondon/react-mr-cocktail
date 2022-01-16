@@ -8,15 +8,15 @@ const ListCocktialItem = ({ id, name, defaultImage }) => {
   }
 
   return (
-    <div>
+    <div className="home-image-container">
       <Link
         to={`/edit/${id}`}
-        className="cocktail-image"
+        className="home-page-cocktails-image"
         style={{
           backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(${defaultImage})`,
         }}
       >
-        <h1 className="cocktail-name">{name}</h1>
+        <p className="home-page-cocktails-font">{name}</p>
       </Link>
     </div>
   );

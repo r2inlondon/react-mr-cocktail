@@ -1,0 +1,59 @@
+.home-page-sub-title {
+  color: $font-blue-color;
+  font-size: $home-page-sub-title-font;
+  text-align: center;
+  padding: 3rem 0 1rem 0;
+}
+
+.cocktails-area {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.home-image-container {
+  margin: $cocktail-image-margin;
+  text-align: center;
+}
+
+.home-page-cocktails-image {
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 3%;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.home-page-cocktails-font {
+  font-size: $small-font-size;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  margin: auto;
+  font-size: $home-page-sub-title-font;
+  font-weight: bold;
+  color: $font-main-color;
+}
+
+@media screen and (max-width: $mobile-screen) {
+  .home-page-sub-title {
+    font-size: $home-page-title-font-media;
+  }
+
+  .home-image-container {
+    margin: $cocktail-image-margin-media;
+  }
+
+  .home-page-cocktails-image {
+    height: 150px;
+    width: 120px;
+  }
+
+  .home-page-cocktails-font {
+    font-size: 2rem;
+  }
+}

@@ -6,7 +6,7 @@ const ListsCocktails = (props) => {
   const cocktails = useSelector((state) => state.cocktails);
 
   return (
-    <div>
+    <div className="cocktails-area">
       {cocktails.map((cocktail) => {
         return <ListCocktailItem key={cocktail.id} {...cocktail} />;
       })}

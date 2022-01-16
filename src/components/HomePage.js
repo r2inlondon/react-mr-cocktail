@@ -5,7 +5,7 @@ import Banner from "./Banner";
 const HomePage = () => (
   <div>
     <Banner />
-    <h1 className="home-page-title">COCKTAILS AND RECIPIES</h1>
+    <h1 className="home-page-sub-title">COCKTAILS AND RECIPIES</h1>
     <ListsCocktails />
   </div>
 );
