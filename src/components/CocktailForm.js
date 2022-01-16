@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { v4 as uuidv4 } from "uuid";
 import Modal from "./modal";
+import ModalTwo from "./ModalTwo";
 
 const CocktailForm = (props) => {
   let navigate = useNavigate();
@@ -65,9 +66,7 @@ const CocktailForm = (props) => {
         ></input>
         <button className="button-24">Add</button>
       </form>
-      <Modal openModal={isOpen} closeModal={closeModal}>
-        <p>Now Add the ingredients and photo</p>
-      </Modal>
+      <ModalTwo openModal={isOpen} closeModal={closeModal} />
     </div>
   );
 };
