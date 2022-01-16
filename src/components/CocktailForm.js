@@ -53,17 +53,17 @@ const CocktailForm = (props) => {
 
   return (
     <div className="add-cocktail-form-container">
-      {errorState && <p>{errorState}</p>}
-      <form onSubmit={onSubmit}>
+      {errorState && <p className="error-message">{errorState}</p>}
+      <form onSubmit={onSubmit} className="add-cocktail-form">
         <input
           type="text"
           placeholder="Enter name"
           autoFocus
           value={nameState}
           onChange={onNameChange}
-          className="add-cocktail-form"
+          className="add-cocktail-form-input"
         ></input>
-        <button>Add</button>
+        <button className="button-24">Add</button>
       </form>
       <Modal openModal={isOpen} closeModal={closeModal}>
         <p>Now Add the ingredients and photo</p>

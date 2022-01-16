@@ -16,10 +16,17 @@
 
 .add-cocktail-title {
   //   margin: 4rem 0;
-  text-align: center;
+  //   text-align: center;
   padding-top: 4rem;
   font-size: $home-page-sub-title-font;
   color: $font-main-color;
+}
+
+.error-message {
+  font-family: $font-main;
+  font-size: $small-font-size;
+  margin-bottom: 1rem;
+  color: rgb(228, 132, 24);
 }
 
 .add-cocktail-form-container {
@@ -27,6 +34,11 @@
 }
 
 .add-cocktail-form {
+  display: flex;
+}
+
+.add-cocktail-form-input {
   font-family: $font-main;
   font-size: $small-font-size;
+  margin-right: 2rem;
 }
