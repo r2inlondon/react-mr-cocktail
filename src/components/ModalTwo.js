@@ -14,6 +14,8 @@ const ModalTwo = ({ openModal, closeModal }) => {
       //   onRequestClose={closeModal(myCocktail[0].id)}
       contentLabel="Cocktail has been created"
       ariaHideApp={false}
+      closeTimeoutMS={200}
+      className="modal"
     >
       <p>Now Add the ingredients and photo</p>
       <button onClick={() => closeModal(myCocktail[0].id)}>Okay</button>

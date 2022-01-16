@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { v4 as uuidv4 } from "uuid";
-import Modal from "./modal";
 import ModalTwo from "./ModalTwo";
 
 const CocktailForm = (props) => {
