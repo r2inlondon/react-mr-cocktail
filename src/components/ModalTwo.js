@@ -11,11 +11,12 @@ const ModalTwo = ({ openModal, closeModal }) => {
   return (
     <Modal
       isOpen={openModal}
+      //   onRequestClose={closeModal(myCocktail[0].id)}
       contentLabel="Cocktail has been created"
       ariaHideApp={false}
     >
       <p>Now Add the ingredients and photo</p>
-      <button onClick={() => closeModal(myCocktail[0].id)}>Close Modal</button>
+      <button onClick={() => closeModal(myCocktail[0].id)}>Okay</button>
     </Modal>
   );
 };
