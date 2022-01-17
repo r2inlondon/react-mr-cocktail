@@ -26,7 +26,7 @@
   font-family: $font-main;
   font-size: $small-font-size;
   margin-bottom: 1rem;
-  color: rgb(228, 132, 24);
+  color: $orange-color;
 }
 
 .add-cocktail-form-container {
@@ -41,4 +41,23 @@
   font-family: $font-main;
   font-size: $small-font-size;
   margin-right: 2rem;
+}
+
+.button-24 {
+  @extend %button-shared;
+  border: 1px solid #ffffff;
+  font-size: $small-font-size;
+  color: $font-main-color;
+}
+.button-24:hover,
+.button-24:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #000000;
+  background-color: white;
+  border: 1px solid #000000;
+}
+
+.button-24:active {
+  opacity: 0.5;
 }

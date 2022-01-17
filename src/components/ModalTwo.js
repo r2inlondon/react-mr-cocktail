@@ -17,8 +17,15 @@ const ModalTwo = ({ openModal, closeModal }) => {
       closeTimeoutMS={200}
       className="modal"
     >
-      <p>Now Add the ingredients and photo</p>
-      <button onClick={() => closeModal(myCocktail[0].id)}>Okay</button>
+      <p className="modal-text">
+        Cocktail created, please add a photo and ingredients
+      </p>
+      <button
+        onClick={() => closeModal(myCocktail[0].id)}
+        className="modal-button"
+      >
+        Okay
+      </button>
     </Modal>
   );
 };

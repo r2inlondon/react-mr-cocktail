@@ -1,14 +1,13 @@
 /* CSS */
-.button-24 {
+%button-shared {
   background: #000000;
-  border: 1px solid #ffffff;
+  // border: 1px solid #ffffff;
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
   box-sizing: border-box;
-  color: $font-main-color;
+  // color: $font-main-color;
   cursor: pointer;
   font-family: $font-main;
-  font-size: $small-font-size;
   display: inline-block;
   line-height: 16px;
   min-height: 40px;
@@ -21,17 +20,4 @@
   -webkit-user-select: none;
   touch-action: manipulation;
   vertical-align: middle;
-}
-
-.button-24:hover,
-.button-24:active {
-  background-color: initial;
-  background-position: 0 0;
-  color: #000000;
-  background-color: white;
-  border: 1px solid #000000;
-}
-
-.button-24:active {
-  opacity: 0.5;
 }

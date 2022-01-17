@@ -20,8 +20,36 @@
 .modal {
   background: $main-background-color;
   color: $font-main-color;
-  max-width: 30rem;
-  outline: none;
-  padding: 10rem;
+  //   width: 30rem;
+  //   height: 30rem;
+  padding: 4rem;
   text-align: center;
+  outline: none;
+  border-radius: 2%;
+}
+
+.modal-text {
+  font-size: $smaller-font-size;
+  width: 30rem;
+}
+
+.modal-button {
+  @extend %button-shared;
+  border: 1px solid $orange-color;
+  color: $orange-color;
+  font-size: $smaller-font-size;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+.modal-button:hover,
+.modal-button:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #000000;
+  background-color: white;
+  border: 1px solid #000000;
+}
+
+.modal-button:active {
+  opacity: 0.5;
 }
