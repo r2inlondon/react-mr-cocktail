@@ -61,3 +61,17 @@
 .button-24:active {
   opacity: 0.5;
 }
+
+@media screen and (max-width: $mobile-screen) {
+  .add-cocktail-container {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    width: 90vw;
+    height: 40vh;
+  }
+  .add-cocktail-form-input {
+    font-size: $smaller-font-size;
+    width: 80%;
+    box-sizing: border-box;
+  }
+}
