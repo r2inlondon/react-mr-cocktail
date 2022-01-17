@@ -51,3 +51,10 @@
   top: 0;
   text-decoration: none;
 }
+
+@media screen and (max-width: $mobile-screen) {
+  .cocktail-container {
+    width: 30rem;
+    padding: 4rem 0;
+  }
+}
