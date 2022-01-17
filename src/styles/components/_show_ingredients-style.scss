@@ -27,3 +27,24 @@
 .button-ingredients:active {
   opacity: 0.5;
 }
+
+.show-ingrediets-container {
+  margin-top: 2rem;
+}
+
+.ingredients-title {
+  font-size: $smaller-font-size;
+  font-weight: bold;
+  color: $font-blue-color;
+}
+
+.single-ingredient-container {
+  display: flex;
+  align-items: center;
+  font-size: $extra-small-font-size;
+  //   font-weight: bold;
+}
+
+.one-ingredient {
+  margin: 1rem 2rem 1rem 0;
+}

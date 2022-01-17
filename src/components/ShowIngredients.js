@@ -6,8 +6,8 @@ const ShowIngredients = (props) => {
   let validateIngredients = ingredients.length > 0 ? true : false;
 
   return (
-    <div>
-      <h3>INGREDIENTS</h3>
+    <div className="show-ingrediets-container">
+      <p className="ingredients-title">INGREDIENTS</p>
       {validateIngredients && (
         <GetIngredients
           ingredients={ingredients}
@@ -24,8 +24,8 @@ const GetIngredients = (props) => {
       {props.ingredients.map((ingredient, index) => {
         if (ingredient !== 0) {
           return (
-            <div key={index + 100}>
-              <p key={index} data-remove={index}>
+            <div key={index + 100} className="single-ingredient-container">
+              <p key={index} className="one-ingredient" data-remove={index}>
                 {ingredient}
               </p>
               <a
@@ -33,7 +33,7 @@ const GetIngredients = (props) => {
                 key={index + 200}
                 onClick={props.removeIngredientButton}
               >
-                remove
+                <i className="far fa-trash-alt"></i>
               </a>
             </div>
           );

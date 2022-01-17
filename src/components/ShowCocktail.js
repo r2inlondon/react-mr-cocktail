@@ -28,9 +28,10 @@ const ShowCocktail = () => {
   }
 
   const removeIngredientButton = (e) => {
-    const ingredient = e.target.previousElementSibling.innerText;
-    const index = e.target.previousElementSibling.getAttribute("data-remove");
-    // dispatch(removeIngredient({ id, ingredient }));
+    // console.log(e.target.parentElement.previousElementSibling.innerText);
+    const ingredient = e.target.parentElement.previousElementSibling.innerText;
+    const index =
+      e.target.parentElement.previousElementSibling.getAttribute("data-remove");
     dispatch(startRemoveIngredient({ id, ingredient, index }));
   };
 
