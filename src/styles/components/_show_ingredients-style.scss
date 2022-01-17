@@ -1,0 +1,29 @@
+.add-ingredient-form {
+  display: flex;
+}
+
+.add-ingredient-form-input {
+  font-family: $font-main;
+  font-size: $smaller-font-size;
+  margin-right: 1.5rem;
+  width: 78%;
+}
+
+.button-ingredients {
+  @extend %button-shared;
+  font-size: $smaller-font-size;
+  color: $font-main-color;
+}
+
+.button-ingredients:hover,
+.button-ingredients:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #000000;
+  background-color: white;
+  //   border: 1px solid #000000;
+}
+
+.button-ingredients:active {
+  opacity: 0.5;
+}

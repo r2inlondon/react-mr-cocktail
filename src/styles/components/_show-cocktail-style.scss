@@ -1,6 +1,29 @@
 .cocktail-container {
   margin: auto;
-  width: 30vw;
+  width: 45rem;
+  padding: 4rem 0;
+}
+
+.cocktail-name {
+  font-size: $big-font-size;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+}
+
+.upload-form-container {
+  margin-top: 1rem;
+  margin-bottom: 5rem;
+}
+
+.upload-form-title-container {
+  margin-top: 6rem;
+}
+
+.upload-form-title {
+  font-size: $extra-small-font-size;
+  font-weight: bold;
+  color: $orange-color;
 }
 
 .image-container {
@@ -19,23 +42,12 @@
   justify-content: center;
   align-items: center;
   font-size: $small-font-size;
+  color: $font-main-color;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   margin: auto;
-  // margin-top: 25px;
-  // position: relative;
   left: 0;
   top: 0;
   text-decoration: none;
-}
-
-.cocktail-name {
-  color: $font-2nd-color;
-  font-size: $navbar-font-size;
-  margin: 0;
-}
-
-.ingredients-container {
-  position: relative;
 }

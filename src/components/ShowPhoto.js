@@ -20,8 +20,8 @@ export const ShowPhoto = ({ name, defaultImage }) => {
 };
 
 export const ShowUploadForm = () => (
-  <div>
-    <p>Upload an image for the cocktail</p>
+  <div className="upload-form-title-container">
+    <p className="upload-form-title">Upload an image for the cocktail</p>
     <UploadForm />
   </div>
 );

@@ -21,7 +21,11 @@ const ShowCocktail = () => {
     return cocktail.id === id;
   });
 
-  const { name, defaultImage } = theCocktail;
+  let { name, defaultImage } = theCocktail;
+
+  if (defaultImage === 0) {
+    defaultImage = "";
+  }
 
   const removeIngredientButton = (e) => {
     const ingredient = e.target.previousElementSibling.innerText;
@@ -52,15 +56,16 @@ const ShowCocktail = () => {
       {defaultImage && <ShowPhoto name={name} defaultImage={defaultImage} />}
 
       {error && <p>{error}</p>}
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} className="add-ingredient-form">
         <input
           type="text"
           placeholder="Add an ingredient"
           autoFocus
           value={ingredient}
           onChange={(e) => setIngredient(e.target.value)}
+          className="add-ingredient-form-input"
         ></input>
-        <button>Add</button>
+        <button className="button-ingredients">Add</button>
       </form>
 
       <ShowIngredients
