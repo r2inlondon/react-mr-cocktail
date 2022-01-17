@@ -20,8 +20,6 @@
 .modal {
   background: $main-background-color;
   color: $font-main-color;
-  //   width: 30rem;
-  //   height: 30rem;
   padding: 4rem;
   text-align: center;
   outline: none;
@@ -52,4 +50,10 @@
 
 .modal-button:active {
   opacity: 0.5;
+}
+
+@media screen and (max-width: $mobile-screen) {
+  .modal {
+    padding: 1.8rem;
+  }
 }
