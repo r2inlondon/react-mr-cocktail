@@ -7,18 +7,21 @@ import EditCocktailPage from "../components/EditCocktailPage";
 import ShowCocktail from "../components/ShowCocktail";
 import NavBar from "../components/NavBar";
 import Footer from "../components/footer";
+import ScrollToTop from "../components/ScrollToTop";
 
 function App() {
   return (
     <Router>
       <NavBar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="*" element={<NotFoundPage />} />
-        <Route path="/create" element={<AddCocktailPage />} />
-        {/* <Route path="/edit/:id" element={<EditCocktailPage />} /> */}
-        <Route path="/edit/:id" element={<ShowCocktail />} />
-      </Routes>
+      <ScrollToTop>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="*" element={<NotFoundPage />} />
+          <Route path="/create" element={<AddCocktailPage />} />
+          {/* <Route path="/edit/:id" element={<EditCocktailPage />} /> */}
+          <Route path="/edit/:id" element={<ShowCocktail />} />
+        </Routes>
+      </ScrollToTop>
       <Footer />
     </Router>
   );
