@@ -51,28 +51,30 @@ const ShowCocktail = () => {
   };
 
   return (
-    <div className="cocktail-container">
-      {!defaultImage && <h1 className="cocktail-name">{name}</h1>}
-      {!defaultImage && <ShowUploadForm />}
-      {defaultImage && <ShowPhoto name={name} defaultImage={defaultImage} />}
+    <div className="show-cocktail-background">
+      <div className="cocktail-container">
+        {!defaultImage && <h1 className="cocktail-name">{name}</h1>}
+        {!defaultImage && <ShowUploadForm />}
+        {defaultImage && <ShowPhoto name={name} defaultImage={defaultImage} />}
 
-      {error && <p>{error}</p>}
-      <form onSubmit={onSubmit} className="add-ingredient-form">
-        <input
-          type="text"
-          placeholder="Add an ingredient"
-          autoFocus
-          value={ingredient}
-          onChange={(e) => setIngredient(e.target.value)}
-          className="add-ingredient-form-input"
-        ></input>
-        <button className="button-ingredients">Add</button>
-      </form>
+        {error && <p>{error}</p>}
+        <form onSubmit={onSubmit} className="add-ingredient-form">
+          <input
+            type="text"
+            placeholder="Add an ingredient"
+            autoFocus
+            value={ingredient}
+            onChange={(e) => setIngredient(e.target.value)}
+            className="add-ingredient-form-input"
+          ></input>
+          <button className="button-ingredients">Add</button>
+        </form>
 
-      <ShowIngredients
-        cocktail={theCocktail}
-        removeIngredientButton={removeIngredientButton}
-      />
+        <ShowIngredients
+          cocktail={theCocktail}
+          removeIngredientButton={removeIngredientButton}
+        />
+      </div>
     </div>
   );
 };

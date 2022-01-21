@@ -3,7 +3,7 @@ import ListsCocktails from "./ListsCocktails";
 import Banner from "./Banner";
 
 const HomePage = () => (
-  <div>
+  <div className="home-page-main-container">
     <Banner />
     <h1 className="home-page-sub-title">COCKTAILS AND RECIPIES</h1>
     <ListsCocktails />
