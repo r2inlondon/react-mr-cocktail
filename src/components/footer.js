@@ -2,19 +2,39 @@ import React from "react";
 
 const Footer = () => (
   <div className="footer">
-    <div className="social">
-      <a href="#0">Instagram</a>
-      <a href="#0">facebook</a>
-      <a href="#0">youtube</a>
+    <div className="social-container">
+      <a
+        href="https://www.instagram.com/explore/tags/cocktails/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {" "}
+        <i className="fab fa-instagram"></i>
+      </a>
+      <a
+        href="https://www.facebook.com/groups/916905265136283"
+        target="blank"
+        rel="noopener noreferrer"
+      >
+        {" "}
+        <i className="fab fa-facebook-square"></i>
+      </a>
+      <a
+        href="https://www.youtube.com/watch?v=b0IuTL3Z-kk&ab_channel=Epicurious"
+        target="_blank"
+        className="youtube"
+        rel="noopener noreferrer"
+      >
+        <i className="fab fa-youtube"></i>
+      </a>
     </div>
     <div className="blog">
-      <div className="blog-text">
-        <h2>Blog</h2>
+      <div className="text-container">
+        {/* <h1>React CRUD app with Redux and firebase</h1> */}
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur vero
-          corporis ipsum repellendus cumque, laboriosam consectetur maxime
-          temporibus amet minus modi possimus cum unde fugit est. Dolores autem
-          eius voluptate.
+          This web app was inspired from my old days of working as a bartender,
+          I really enjoyed making cocktails and I wanted to share my passion
+          with you, hope you like it!
         </p>
       </div>
     </div>
