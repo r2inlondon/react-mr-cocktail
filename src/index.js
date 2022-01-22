@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import reportWebVitals from "./reportWebVitals";
 import App from "./routers/AppRouter";
 import { store } from "./store/configureStore";
+import LoadingPage from "./components/LoadingPage";
 import "./firebase/firebase";
 import { startSetCocktails } from "./firebase/firebaseFunctions";
 import "./styles/styles.scss";
@@ -16,7 +17,7 @@ const jsx = (
   </React.StrictMode>
 );
 
-ReactDOM.render(<p>Loading...</p>, document.getElementById("root"));
+ReactDOM.render(<LoadingPage />, document.getElementById("root"));
 
 store.dispatch(startSetCocktails()).then(() => {
   ReactDOM.render(jsx, document.getElementById("root"));
