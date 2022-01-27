@@ -31,11 +31,18 @@ const CocktailForm = (props) => {
     e.preventDefault();
 
     let name = nameState;
+
+    const checkName = /^(\w{3,})[a-zA-Z .]*$/;
+
+    const result = checkName.test(name);
+    console.log(name);
+    console.log(result);
+
     const ingredients = [0];
 
     const defaultImage = 0;
 
-    if (name) {
+    if (result) {
       props.onSubmit({
         name,
         ingredients,
@@ -43,7 +50,7 @@ const CocktailForm = (props) => {
       });
       setIsOpen(true);
     } else {
-      setErrorState("Enter a cocktail name");
+      setErrorState("Enter a valid cocktail name");
     }
   };
 
