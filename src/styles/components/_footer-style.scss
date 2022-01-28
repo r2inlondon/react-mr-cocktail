@@ -42,13 +42,13 @@
 }
 
 .text-container {
-  width: 40rem;
+  width: 53rem;
   color: $font-main-color;
   text-align: justify;
 }
 
 .text-container p {
-  font-size: $very-small-font-size;
+  font-size: $extra-small-font-size;
 }
 
 @media screen and (max-width: $mobile-screen) {
@@ -64,5 +64,8 @@
   .text-container {
     width: 24rem;
     margin-right: 0;
+    p {
+      font-size: $very-small-font-size;
+    }
   }
 }
