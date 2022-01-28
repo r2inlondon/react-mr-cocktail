@@ -32,11 +32,9 @@ const CocktailForm = (props) => {
 
     let name = nameState;
 
-    const checkName = /^(\w{3,})[a-zA-Z .]*$/;
+    const checkName = /^(\w{3,})[\w .]*/;
 
     const result = checkName.test(name);
-    console.log(name);
-    console.log(result);
 
     const ingredients = [0];
 

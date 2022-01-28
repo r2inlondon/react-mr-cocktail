@@ -40,13 +40,19 @@ const ShowCocktail = () => {
 
     const index = theCocktail.ingredients.length;
 
-    if (ingredient) {
+    const regexCheck = /^(\w{1,})[\w .]*/;
+
+    const result = regexCheck.test(ingredient);
+
+    console.log(result);
+
+    if (ingredient && result) {
       // Send ingredient to firebase
       dispatch(startAddIngredient({ id, ingredients: ingredient, index }));
       setIngredient("");
       setError("");
     } else {
-      setError("Enter an ingredient");
+      setError("Enter an ingredient, like: 40ml of tequila");
     }
   };
 
@@ -57,7 +63,7 @@ const ShowCocktail = () => {
         {!defaultImage && <ShowUploadForm />}
         {defaultImage && <ShowPhoto name={name} defaultImage={defaultImage} />}
 
-        {error && <p>{error}</p>}
+        {error && <p className="upload-form-title">{error}</p>}
         <form onSubmit={onSubmit} className="add-ingredient-form">
           <input
             type="text"
