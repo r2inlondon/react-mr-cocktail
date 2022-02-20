@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { prefixedData } from "../src/firebase/prefixed";
 import { db } from "../src/firebase/firebase";
 
