@@ -2,7 +2,6 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import database from "firebase/compat/database";
 import "firebase/compat/storage";
-import { data } from "./prefixed";
 
 const {
   REACT_APP_API_KEY,
@@ -29,11 +28,5 @@ firebase.initializeApp(config);
 
 const db = firebase.database();
 const projectStorage = firebase.storage();
-
-// set prefix data every 2 hours
-setInterval(() => {
-  // console.log("prefixed data added !");
-  db.ref().set(data);
-}, 129 * 60 * 1000);
 
 export { db, projectStorage };

@@ -1,4 +1,4 @@
-export const data = {
+export const prefixedData = {
   cocktails: {
     "-MtFV3rL2ykreuZEed2V": {
       defaultImage:
