@@ -7,6 +7,7 @@ import {
   startAddIngredient,
   startRemoveIngredient,
 } from "../firebase/firebaseFunctions";
+import { motion } from "framer-motion/dist/framer-motion";
 
 const ShowCocktail = () => {
   const dispatch = useDispatch();
@@ -28,9 +29,6 @@ const ShowCocktail = () => {
   }
 
   const removeIngredientButton = (e) => {
-    // console.log(e.target.parentElement.previousElementSibling.innerText);
-    // const ingredient = e.target.parentElement.previousElementSibling.innerText;
-    // console.log(e.target.parentElement.previousElementSibling);
     const ingredientId =
       e.target.parentElement.previousElementSibling.getAttribute("data-remove");
     dispatch(startRemoveIngredient({ id, ingredientId }));
@@ -38,12 +36,6 @@ const ShowCocktail = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-
-    // let index = 0;
-
-    // if (theCocktail.ingredients) {
-    //   index = Object.keys(theCocktail.ingredients).length;
-    // }
 
     const regexCheck = /^(\w{1,})[\w .]*/;
 
@@ -60,7 +52,13 @@ const ShowCocktail = () => {
   };
 
   return (
-    <div className="show-cocktail-background">
+    <motion.div
+      initial={{ scaleY: 0 }}
+      animate={{ scaleY: 1 }}
+      exit={{ scaleY: 0 }}
+      transition={{ duration: 0.2 }}
+      className="show-cocktail-background"
+    >
       <div className="cocktail-container">
         {!defaultImage && <h1 className="cocktail-name">{name}</h1>}
         {!defaultImage && <ShowUploadForm />}
@@ -84,7 +82,7 @@ const ShowCocktail = () => {
           removeIngredientButton={removeIngredientButton}
         />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

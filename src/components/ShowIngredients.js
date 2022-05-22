@@ -3,7 +3,6 @@ import React from "react";
 const ShowIngredients = (props) => {
   let { ingredients } = props.cocktail;
 
-  // let validateIngredients = ingredients?.length > 0 ? ingredients : false;
   if (ingredients) {
   }
 

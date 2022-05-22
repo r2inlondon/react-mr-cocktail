@@ -1,10 +1,6 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import HomePage from "../components/HomePage";
-import NotFoundPage from "../components/NotFoundPage";
-import AddCocktailPage from "../components/AddCocktailPage";
-// import EditCocktailPage from "../components/EditCocktailPage";
-import ShowCocktail from "../components/ShowCocktail";
+import { BrowserRouter as Router } from "react-router-dom";
+import AnimatedRoutes from "./AnimatedRoutes";
 import NavBar from "../components/NavBar";
 import Footer from "../components/footer";
 import ScrollToTop from "../components/ScrollToTop";
@@ -14,13 +10,7 @@ function App() {
     <Router>
       <NavBar />
       <ScrollToTop>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="*" element={<NotFoundPage />} />
-          <Route path="/create" element={<AddCocktailPage />} />
-          {/* <Route path="/edit/:id" element={<EditCocktailPage />} /> */}
-          <Route path="/edit/:id" element={<ShowCocktail />} />
-        </Routes>
+        <AnimatedRoutes />
       </ScrollToTop>
       <Footer />
     </Router>
