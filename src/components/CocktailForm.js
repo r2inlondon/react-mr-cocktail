@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
-import { v4 as uuidv4 } from "uuid";
 import ModalTwo from "./ModalTwo";
 
 const CocktailForm = (props) => {
@@ -9,9 +8,6 @@ const CocktailForm = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [errorState, setErrorState] = useState("");
 
-  // const [idState, setIdState] = useState(
-  //   props.cocktail ? props.cocktail.id : uuidv4()
-  // );
   const [nameState, setNameState] = useState(
     props.cocktail ? props.cocktail.name : ""
   );
@@ -32,11 +28,11 @@ const CocktailForm = (props) => {
 
     let name = nameState;
 
-    const checkName = /^(\w{3,})[\w .]*/;
+    const checkName = /^(\w{2,})[\w .]*/;
 
     const result = checkName.test(name);
 
-    const ingredients = [0];
+    const ingredients = {};
 
     const defaultImage = 0;
 

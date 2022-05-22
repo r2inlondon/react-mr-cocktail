@@ -2,6 +2,7 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import database from "firebase/compat/database";
 import "firebase/compat/storage";
+// import { prefixedData } from "./prefixed";
 
 const {
   REACT_APP_API_KEY,
@@ -30,3 +31,10 @@ const db = firebase.database();
 const projectStorage = firebase.storage();
 
 export { db, projectStorage };
+
+// const setTheData = () => {
+//   console.log("prefixed data added !");
+//   db.ref().set(prefixedData);
+// };
+
+// setTheData();

@@ -1,5 +1,4 @@
-import { createSlice, current } from "@reduxjs/toolkit";
-import { v4 as uuidv4 } from "uuid";
+import { createSlice } from "@reduxjs/toolkit";
 
 export const initialState = [
   // {
@@ -32,24 +31,29 @@ const cocktailSlice = createSlice({
       }
     },
     addIngredients(state, action) {
-      const { id, ingredients } = action.payload;
+      let { id, ingredients, ingredientId } = action.payload;
       const existingCocktail = state.find((cocktail) => cocktail.id === id);
 
-      if (existingCocktail) {
-        existingCocktail.ingredients.push(ingredients);
+      if (existingCocktail.ingredients) {
+        existingCocktail.ingredients[ingredientId] = ingredients;
+      } else {
+        existingCocktail.ingredients = {};
+        existingCocktail.ingredients[ingredientId] = ingredients;
       }
     },
     removeIngredient(state, action) {
-      const { id, ingredient } = action.payload;
+      const { id, ingredientId } = action.payload;
       const existingCocktail = state.find((cocktail) => cocktail.id === id);
 
-      if (existingCocktail) {
-        existingCocktail.ingredients.forEach((existingIngredient, index) => {
-          if (existingIngredient === ingredient) {
-            existingCocktail.ingredients.splice(index, 1);
-          }
-        });
-      }
+      delete existingCocktail.ingredients[ingredientId];
+
+      // if (existingCocktail) {
+      //   existingCocktail.ingredients.forEach((existingIngredient, index) => {
+      //     if (existingIngredient === ingredient) {
+      //       existingCocktail.ingredients.splice(index, 1);
+      //     }
+      //   });
+      // }
     },
     addImage(state, action) {
       const { id, url } = action.payload;

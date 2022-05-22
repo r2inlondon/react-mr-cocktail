@@ -29,26 +29,29 @@ const ShowCocktail = () => {
 
   const removeIngredientButton = (e) => {
     // console.log(e.target.parentElement.previousElementSibling.innerText);
-    const ingredient = e.target.parentElement.previousElementSibling.innerText;
-    const index =
+    // const ingredient = e.target.parentElement.previousElementSibling.innerText;
+    // console.log(e.target.parentElement.previousElementSibling);
+    const ingredientId =
       e.target.parentElement.previousElementSibling.getAttribute("data-remove");
-    dispatch(startRemoveIngredient({ id, ingredient, index }));
+    dispatch(startRemoveIngredient({ id, ingredientId }));
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
 
-    const index = theCocktail.ingredients.length;
+    // let index = 0;
+
+    // if (theCocktail.ingredients) {
+    //   index = Object.keys(theCocktail.ingredients).length;
+    // }
 
     const regexCheck = /^(\w{1,})[\w .]*/;
 
     const result = regexCheck.test(ingredient);
 
-    console.log(result);
-
     if (ingredient && result) {
       // Send ingredient to firebase
-      dispatch(startAddIngredient({ id, ingredients: ingredient, index }));
+      dispatch(startAddIngredient({ id, ingredients: ingredient }));
       setIngredient("");
       setError("");
     } else {

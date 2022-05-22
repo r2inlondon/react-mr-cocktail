@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from "uuid";
 import { db } from "../firebase/firebase";
 import {
   setCocktails,
@@ -45,12 +46,13 @@ export const startCreateCocktail = (cocktail) => {
 };
 
 export const startRemoveIngredient = (cocktail) => {
-  const { id, ingredient, index } = cocktail;
+  const { id, ingredientId } = cocktail;
+
   return (dispatch) => {
-    db.ref(`cocktails/${id}/ingredients/${index}`)
+    db.ref(`cocktails/${id}/ingredients/${ingredientId}`)
       .remove()
       .then(() => {
-        dispatch(removeIngredient({ id, ingredient }));
+        dispatch(removeIngredient({ id, ingredientId }));
       })
       .catch((e) => {
         console.log("Ingredient removal Failed", e);
@@ -59,12 +61,14 @@ export const startRemoveIngredient = (cocktail) => {
 };
 
 export const startAddIngredient = (cocktail) => {
+  const ingredientId = uuidv4();
   return (dispatch) => {
-    const { id, ingredients, index } = cocktail;
-    db.ref(`cocktails/${id}/ingredients/${index}`)
+    const { id, ingredients } = cocktail;
+    db.ref(`cocktails/${id}/ingredients/${ingredientId}`)
       .set(ingredients)
       .then(() => {
-        dispatch(addIngredients({ id, ingredients }));
+        // console.log({ id, ingredients });
+        dispatch(addIngredients({ id, ingredients, ingredientId }));
       })
       .catch((e) => {
         console.log("Adding Ingredient Failed", e);

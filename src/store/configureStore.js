@@ -1,7 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
 import cocktailSlice from "../Reducers/cocktailsReducer";
-import { connect } from "react-redux";
-import { removeIngredient, addIngredients } from "../Reducers/cocktailsReducer";
 
 export const store = configureStore({
   reducer: {
